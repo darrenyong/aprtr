@@ -19,7 +19,7 @@
 }
 
 .login-form {
-  height: 275px;
+  height: 360px;
 }
 
 // Signup Section
@@ -39,7 +39,7 @@
 }
 
 .signup-form {
-  height: 325px;
+  height: 410px;
 }
 
 // Combination
@@ -58,17 +58,17 @@
 .login-form, .signup-form {
   background: #fcfcfc;
   font-family: "Helvetica";
-  width: 250px;
+  width: 320px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  border-radius: 2px;
+  border-radius: 5px;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, .5);
 }
 
 .login-form h2, .signup-form h2 {
-  padding: 15px 10px 0px 10px;
-  font-size: 17px;
+  padding: 30px 10px 0px 10px;
+  font-size: 19px;
   text-align: center;
   color: #202123;
 }
@@ -84,12 +84,12 @@
   background: #468fdc;
   color: white;
   border: none;
-  border-radius: 2px;
-  width: 214px;
-  height: 32px;
+  border-radius: 5px;
+  width: 265px;
+  height: 40px;
   font-weight: bold;
   margin-top: 9px;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .login-form form button:hover, .signup-form form button, .login-form button, .signup-form button {
@@ -99,7 +99,7 @@
 .login-signup, .signup-login {
   padding: 7px;
   text-align: center;
-  font-size: 10px;
+  font-size: 13px;
   color: #202123;
 }
 
@@ -112,8 +112,9 @@
 input[type=text], input[type=password] {
   padding-left: 15px;
   margin: 5px;
-  width: 200px;
-  height: 41px;
-  border: 1px solid #c7d0d2;
-  border-radius: 2px;
+  width: 250px;
+  height: 52px;
+  border: 1px solid #a7a7a7;
+  border-radius: 5px;
+  font-size: 16px;
 }
