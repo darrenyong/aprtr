@@ -8,6 +8,7 @@ const mSP = (state) => {
   })
 }
 
+// Routes you don't want users to see when they're logged in
 const Auth = ({ loggedIn, path, component: Component }) => (
   <Route
     path={path}
@@ -17,6 +18,7 @@ const Auth = ({ loggedIn, path, component: Component }) => (
   />
 );
 
+// Routes you don't want users to see when they're not logged in
 const Protected = ({ loggedIn, path, component: Component }) => (
   <Route
     path={path}

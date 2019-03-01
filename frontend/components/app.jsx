@@ -9,8 +9,6 @@ import LoginContainer from "./session/login_container";
 import NavBarContainer from "./navbar/navbar_container";
 import FooterContainer from "./footer/footer"
 
-
-
 export default () => (
   <div>
     {/* Nav bar & Footer */}
@@ -19,12 +17,14 @@ export default () => (
 
 
     <Switch>
+      {/* <AuthRoute path="/photos" /> */}
+
       {/* Sign Up & Log In */}
       <AuthRoute path="/signup" component={SignupContainer} />
       <AuthRoute path="/login" component={LoginContainer} />
 
       {/* Splash Page */}
-      <AuthRoute exact path="/" component={SplashContainer} />
+      <Route exact path="/" component={SplashContainer} />
 
       {/* Redirect */}
       <Redirect to="/" />
