@@ -1,0 +1,119 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Login Section
+.login-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("https://i.redd.it/od3w3x6kr8a01.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+  height: 100%;
+  display: flex;
+}
+
+.login-form {
+  height: 275px;
+}
+
+// Signup Section
+.signup-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("https://farm5.staticflickr.com/4772/38982783700_4e341a406e_k.jpg");
+  background-repeat: no-repeat;
+  z-index: -1;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+}
+
+.signup-form {
+  height: 325px;
+}
+
+// Combination
+.login-parent, .signup-parent {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1
+}
+
+.login-form, .signup-form {
+  background: #fcfcfc;
+  font-family: "Helvetica";
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 2px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, .5);
+}
+
+.login-form h2, .signup-form h2 {
+  padding: 15px 10px 0px 10px;
+  font-size: 17px;
+  text-align: center;
+  color: #202123;
+}
+
+.login-form form, .signup-form form {
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+.login-form form button, .signup-form form button, .login-form button, .signup-form button {
+  background: #468fdc;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  width: 214px;
+  height: 32px;
+  font-weight: bold;
+  margin-top: 9px;
+  font-size: 12px;
+}
+
+.login-form form button:hover, .signup-form form button, .login-form button, .signup-form button {
+  cursor: pointer;
+}
+
+.login-signup, .signup-login {
+  padding: 7px;
+  text-align: center;
+  font-size: 10px;
+  color: #202123;
+}
+
+.login-signup-link, .signup-login-link {
+  text-decoration: none;
+  color: #468fdc;
+}
+
+// Inputs
+input[type=text], input[type=password] {
+  padding-left: 15px;
+  margin: 5px;
+  width: 200px;
+  height: 41px;
+  border: 1px solid #c7d0d2;
+  border-radius: 2px;
+}

@@ -1,0 +1,35 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  height: 42px;
+  width: 100%;
+}
+
+.footer-text {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  font-size: 11px;
+  color: #999;
+  font-family: "Helvetica";
+  letter-spacing: 0.5px;
+}
+
+.github-plug a, .linkedin-plug a {
+  color: #999;
+  text-decoration: none;
+}
+
+.github-plug a:visited, .github-plug a:focus, .github-plug a:active, .linkedin-plug a:visited, .linkedin-plug a:focus, .linkedin-plug a:active {
+  color: #999;
+  text-decoration: none;
+}
+
+.github-plug a:hover {
+  color: #999;
+  text-decoration: none;
+}

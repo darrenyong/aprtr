@@ -1,0 +1,72 @@
+.splash-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("https://farm5.staticflickr.com/4719/38961235164_37dd78404e_k.jpg");
+  background-repeat: no-repeat;
+  z-index: -1;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+}
+
+.splash-text-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 24px;
+}
+
+.splash-text {
+  width: 500px;
+  font-family: "Helvetica";
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.splash-motto {
+  padding: 15px;
+  padding-bottom: 9px;
+  font-size: 41px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.splash-text-parent {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  z-index: -1;
+}
+
+.splash-body {
+  padding-top: 16px;
+  padding-bottom: 21px;
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.splash-btn {
+  margin-top: 20px;
+  background: white;
+  padding: 18px 50px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.splash-signup-btn {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
