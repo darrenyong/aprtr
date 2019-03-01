@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../utils/route_utils";
 
 // Containers
@@ -24,7 +24,10 @@ export default () => (
       <AuthRoute path="/login" component={LoginContainer} />
 
       {/* Splash Page */}
-      <AuthRoute path="/" component={SplashContainer} />
+      <AuthRoute exact path="/" component={SplashContainer} />
+
+      {/* Redirect */}
+      <Redirect to="/" />
     </Switch>
 
   </div>
