@@ -1,34 +1,32 @@
-.navbar {
+.navbar, .navbar-btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.navbar {
   background: rgba(0, 0, 0, 0.4);
   height: 63px;
   font-family: "Helvetica";
 }
 
-.navbar-logo {
+.navbar-logo, .login-btn {
   text-decoration: none;
-  padding-left: 25px;
   color: white;
+}
+
+.navbar-logo {
+  padding-left: 25px;
   font-weight: 900;
   font-size: 27px;
   letter-spacing: -1px;
 }
 
 .navbar-btn {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 162px;
   font-size: 15px;
   padding: 10px 20px;
   padding-right: 25px;
-}
-
-.login-btn {
-  text-decoration: none;
-  color: white;
 }
 
 .signup-btn {

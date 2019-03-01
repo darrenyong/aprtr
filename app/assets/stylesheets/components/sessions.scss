@@ -2,40 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// Login Section
-.login-image {
+.login-image, .signup-image {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-image: url("https://i.redd.it/od3w3x6kr8a01.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   z-index: -1;
   height: 100%;
   display: flex;
+}
+
+.login-image {
+  background-image: url("https://i.redd.it/od3w3x6kr8a01.jpg");
+}
+
+.signup-image {
+  background-image: url("https://farm5.staticflickr.com/4772/38982783700_4e341a406e_k.jpg");
 }
 
 .login-form {
   height: 360px;
-}
-
-// Signup Section
-.signup-image {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-image: url("https://farm5.staticflickr.com/4772/38982783700_4e341a406e_k.jpg");
-  background-repeat: no-repeat;
-  z-index: -1;
-  background-position: center;
-  background-size: cover;
-  height: 100%;
-  display: flex;
 }
 
 .signup-form {
