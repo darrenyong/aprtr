@@ -17,11 +17,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 24px;
+  padding-bottom: 30px;
 }
 
 .splash-text {
-  width: 500px;
+  width: 650px;
   font-family: "Helvetica";
   color: white;
   display: flex;
@@ -31,8 +31,8 @@
 
 .splash-motto {
   padding: 15px;
-  padding-bottom: 9px;
-  font-size: 41px;
+  padding-bottom: 20px;
+  font-size: 50px;
   letter-spacing: 1px;
   text-align: center;
 }
@@ -50,20 +50,20 @@
 
 .splash-body {
   padding-top: 16px;
-  padding-bottom: 21px;
+  padding-bottom: 20px;
   letter-spacing: 1px;
   text-align: center;
-  font-size: 18px;
-  line-height: 25px;
+  font-size: 24px;
+  line-height: 35px;
 }
 
 .splash-btn {
   margin-top: 20px;
   background: white;
-  padding: 18px 50px;
+  padding: 21px 58px;
   border-radius: 3px;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 22px;
 }
 
 .splash-signup-btn {
