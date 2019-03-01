@@ -13,5 +13,10 @@
 class Photo < ApplicationRecord
   validates :uploader_id, presence: true
 
-  has_one_attached :photo
+  belongs_to :user,
+    primary_key: :id,
+    foreign_key: :uploader_id,
+    class_name: 'User'
+    
+  has_one_attached :picture
 end
