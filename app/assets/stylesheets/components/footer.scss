@@ -5,15 +5,16 @@
   justify-content: center;
   align-items: center;
   background: #000;
-  height: 42px;
+  height: 52px;
   width: 100%;
 }
 
 .footer-text {
   display: flex;
+  padding-bottom: 3px;
   justify-content: space-around;
   width: 300px;
-  font-size: 11px;
+  font-size: 13px;
   color: #999;
   font-family: "Helvetica";
   letter-spacing: 0.5px;

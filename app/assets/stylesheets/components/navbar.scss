@@ -3,16 +3,16 @@
   justify-content: space-between;
   align-items: center;
   background: rgba(0, 0, 0, 0.4);
-  height: 51px;
+  height: 63px;
   font-family: "Helvetica";
 }
 
 .navbar-logo {
   text-decoration: none;
-  padding-left: 20px;
+  padding-left: 25px;
   color: white;
   font-weight: 900;
-  font-size: 24px;
+  font-size: 27px;
   letter-spacing: -1px;
 }
 
@@ -20,9 +20,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 125px;
-  font-size: 12px;
-  padding: 5px 20px;
+  width: 162px;
+  font-size: 15px;
+  padding: 10px 20px;
+  padding-right: 25px;
 }
 
 .login-btn {
@@ -34,8 +35,8 @@
   text-decoration: none;
   color: rgb(0, 0, 0);
   background: white;
-  padding: 7px 16px;
-  border-radius: 2px;
+  padding: 8px 20px;
+  border-radius: 3px;
   font-weight: 550;
 }
 
