@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resource :session, only: [:new, :create, :destroy]
   end
 
+  resources :photos, only: [:show]
 
   match "*path", to: redirect('/'), via: :all
 end
