@@ -1,7 +1,12 @@
-class PhotosController < ApplicationController
+class Api::PhotosController < ApplicationController
   # Index
   def index 
-    @photos = Photo.all
+    if params[:user_id]
+      @photos = Photo.all.select{ |photo| photo.uploader_id == params[:user_id]}
+    else
+      @photos = Photo.all
+    end
+    
     render :index
   end
   
@@ -32,7 +37,7 @@ class PhotosController < ApplicationController
     @photo = current_user.photos.find(params[:id])
 
     if @photo.update(photo_params)
-      render: show
+      render :show
     else
       render json: ["Photo not found!"], status: 404
     end
@@ -53,10 +58,7 @@ class PhotosController < ApplicationController
   # Photo Params
   private
   def photo_params
-    params.require(:photo).permit(
-      :title,
-      :description,
-      :uploader_id
-    )
+    params.require(:photo).permit(:title, :description, :uploader_id)
+  end
 
 end
