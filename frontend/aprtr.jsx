@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from "./components/root"
 import configureStore from "./store/store"
-import { deleteSession } from "./utils/session"
+import { deleteSession } from "./utils/session_api_util"
 
 // Test
-import * as SessionAPI from "./utils/session"
+import * as SessionAPI from "./utils/session_api_util"
 
 document.addEventListener("DOMContentLoaded", () => {
   const rootEl = document.getElementById("root");
