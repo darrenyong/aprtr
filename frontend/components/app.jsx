@@ -9,26 +9,36 @@ import LoginContainer from "./session/login_container";
 import NavBarContainer from "./navbar/navbar_container";
 import FooterContainer from "./footer/footer"
 
-export default () => (
-  <div>
-    {/* Nav bar & Footer */}
-    <Route path="/" component={NavBarContainer} />
-    <Route path="/" component={FooterContainer} />
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    
+  }
+
+  render() {
+    return (
+      <div>
+        {/* Nav bar & Footer */}
+        <Route path="/" component={NavBarContainer} />
+        <Route path="/" component={FooterContainer} />
 
 
-    <Switch>
-      {/* <AuthRoute path="/photos" /> */}
+        <Switch>
+          {/* <AuthRoute path="/photos" /> */}
 
-      {/* Sign Up & Log In */}
-      <AuthRoute path="/signup" component={SignupContainer} />
-      <AuthRoute path="/login" component={LoginContainer} />
+          {/* Sign Up & Log In */}
+          <AuthRoute path="/signup" component={SignupContainer} />
+          <AuthRoute path="/login" component={LoginContainer} />
 
-      {/* Splash Page */}
-      <Route exact path="/" component={SplashContainer} />
+          {/* Splash Page */}
+          <Route exact path="/" component={SplashContainer} />
 
-      {/* Redirect */}
-      <Redirect to="/" />
-    </Switch>
+          {/* Redirect */}
+          <Redirect to="/" />
+        </Switch>
 
-  </div>
-)
+      </div>
+    )
+  }
+}
+  
