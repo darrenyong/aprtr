@@ -33,31 +33,36 @@
 
 .splash-motto {
   padding: 15px;
-  padding-bottom: 20px;
+  padding-bottom: 32px;
   font-size: 50px;
   letter-spacing: 1px;
   text-align: center;
 }
 
 .splash-body {
-  padding-top: 16px;
-  padding-bottom: 20px;
+  padding-top: 10x;
+  padding-bottom: 33px;
   letter-spacing: 1px;
   text-align: center;
   font-size: 24px;
-  line-height: 35px;
+  line-height: 31px;
 }
 
 .splash-btn {
-  margin-top: 20px;
-  background: white;
-  padding: 21px 58px;
-  border-radius: 3px;
-  font-weight: bold;
-  font-size: 22px;
+  margin-top: 40px;
 }
 
 .splash-signup-btn {
+  background: white;
+  padding: 19px 58px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 22px;
   text-decoration: none;
   color: rgb(0, 0, 0);
+}
+
+.splash-signup-btn:hover {
+  color: #7f7f7f;
+
 }
