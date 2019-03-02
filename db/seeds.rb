@@ -12,4 +12,5 @@ ActiveRecord::Base.transaction do
 
   Photo.destroy_all
   photo1 = Photo.create!(title: "test1", description: "test1", uploader_id: user1.id)
+  photo1.picture.attach(io: File.open("./app/assets/images/test_picture.png"), filename: "test.png")
 end
