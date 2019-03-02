@@ -2,7 +2,7 @@ class Api::PhotosController < ApplicationController
   # Index
   def index 
     if params[:user_id]
-      @photos = Photo.all.select{ |photo| photo.uploader_id == params[:user_id]}
+      @photos = Photo.all.select{|photo| photo.uploader_id.to_s == params[:user_id]}
     else
       @photos = Photo.all
     end
@@ -24,6 +24,7 @@ class Api::PhotosController < ApplicationController
   # Create
   def create
     @photo = Photo.new(photo_params)
+    @photo.uploader_id = current_user.id
 
     if @photo.save
       render :show
@@ -58,7 +59,7 @@ class Api::PhotosController < ApplicationController
   # Photo Params
   private
   def photo_params
-    params.require(:photo).permit(:title, :description, :uploader_id)
+    params.require(:photo).permit(:title, :description)
   end
 
 end
