@@ -1,3 +1,4 @@
+// Create User
 export const createUser = (user) =>  {
   return (
     $.ajax({
@@ -8,6 +9,7 @@ export const createUser = (user) =>  {
   )
 };
 
+// Create Session
 export const createSession = (user) => {
   return (
     $.ajax({
@@ -18,6 +20,7 @@ export const createSession = (user) => {
   )
 };
 
+// Destroy Session
 export const deleteSession = () => {
   return (
     $.ajax({
