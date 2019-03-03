@@ -16,7 +16,7 @@ const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER
 })
 
-const receiveErrors = (errors) => ({
+const receiveSessionErrors = (errors) => ({
   type: RECEIVE_SESSION_ERRORS,
   errors: errors
 })
@@ -31,18 +31,21 @@ export const createUser = (user) => (dispatch) => {
   return SessionAPIUtil.createUser(user)
   .then(
     (user) => (dispatch(receiveCurrentUser(user))),
-    (error) => (dispatch(receiveErrors(error.responseJSON))
-  ));
+    (error) => (dispatch(receiveSessionErrors(error.responseJSON)))
+  );
 }
 
 export const createSession = (user) => (dispatch) => {
   return SessionAPIUtil.createSession(user)
   .then(
     (user) => (dispatch(receiveCurrentUser(user))),
-    (error) => (dispatch(receiveErrors(error.responseJSON))
-  ));
+    (error) => (dispatch(receiveSessionErrors(error.responseJSON)))
+  );
 }
 
 export const deleteSession = () => (dispatch) => {
-  return SessionAPIUtil.deleteSession().then( (user) => dispatch(logoutCurrentUser()));
+  return SessionAPIUtil.deleteSession()
+  .then( 
+    (user) => dispatch(logoutCurrentUser())
+  );
 }

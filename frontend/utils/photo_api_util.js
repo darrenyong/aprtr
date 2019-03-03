@@ -8,6 +8,16 @@ export const fetchAllPhotos = () => {
   )
 }
 
+// Show
+export const fetchPhoto = (id) => {
+  return (
+    $.ajax({
+      method: "GET",
+      url: `/api/photos/${id}`
+    })
+  )
+}
+
 // Create
 export const createPhoto = (photo) => {
   return (
@@ -15,16 +25,6 @@ export const createPhoto = (photo) => {
       method: "POST",
       url: `/api/photos`,
       data: { photo: photo }
-    })
-  )
-}
-
-// Show
-export const fetchPhoto = (id) => {
-  return (
-    $.ajax({
-      method: "GET",
-      url: `/api/photos/${id}`
     })
   )
 }
@@ -41,7 +41,7 @@ export const updatePhoto = (photo) => {
 }
 
 // Delete
-export const deletePost = (id) => {
+export const deletePhoto = (id) => {
   return (
     $.ajax({
       method: "DELETE",
