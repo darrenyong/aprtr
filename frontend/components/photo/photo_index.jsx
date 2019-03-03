@@ -15,7 +15,7 @@ class PhotoIndex extends React.Component {
   }
 
   render() {
-    let photo = this.props.photos.entities.photos
+    let photo = this.props.photos
     return (
       <div>
         <PhotoIndexItem photo={photo}/>

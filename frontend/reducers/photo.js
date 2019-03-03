@@ -3,6 +3,7 @@ import {
    RECEIVE_PHOTO,
    REMOVE_PHOTO
   } from "../actions/photo"
+import merge from 'lodash/merge';
 
 export default (oldState = {}, action) => {
   Object.freeze(oldState)
@@ -12,10 +13,10 @@ export default (oldState = {}, action) => {
     case RECEIVE_ALL_PHOTOS:
       return action.photos;
     case RECEIVE_PHOTO:
-      newState = Object.assign({}, oldState, { [action.photo.id]: action.photo });
+      newState = merge({}, oldState, { [action.photo.id]: action.photo });
       return newState;
     case REMOVE_PHOTO:
-      newState = Object.assign({}, oldState);
+      newState = merge({}, oldState);
       delete newState[action.photoId];
       return newState;
     default:

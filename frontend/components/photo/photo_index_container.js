@@ -5,7 +5,7 @@ import { fetchAllPhotos, createPhoto, updatePhoto, fetchPhoto } from "../../acti
 
 const mSP = (state) => {
   return ({
-    photos: state
+    photos: state.entities.photos
   })
 }
 

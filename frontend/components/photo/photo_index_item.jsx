@@ -5,7 +5,7 @@ export default function PhotoIndex(props) {
   if (props.photo[1]) {
     photo = props.photo[1].picture_url
   }
-  console.log(props.photo[1])
+ 
   return (
     <img src={photo}></img>
   );
