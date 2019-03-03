@@ -8,12 +8,11 @@ import SignupContainer from "./session/signup_container";
 import LoginContainer from "./session/login_container";
 import NavBarContainer from "./navbar/navbar_container";
 import FooterContainer from "./footer/footer"
-import PhotoItemIndexContainer from "./photo/photo_index_item_container"
+import PhotoIndex from "./photo/photo_index_container"
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    
   }
 
   render() {
@@ -34,10 +33,9 @@ export default class App extends React.Component {
           <AuthRoute path="/login" component={LoginContainer} />
 
           {/* Splash Page */}
-          {currentUser ? <Route exact path="/" component={PhotoItemIndexContainer} /> : <Route exact path="/" component={SplashContainer} />}
+          {currentUser ? <Route exact path="/" component={PhotoIndex} /> : <Route exact path="/" component={SplashContainer} />}
           
           
-
           {/* Redirect */}
           <Redirect to="/" />
         </Switch>
