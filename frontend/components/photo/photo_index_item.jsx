@@ -2,11 +2,18 @@ import React from 'react';
 
 export default function PhotoIndex(props) {
   let photo;
-  if (props.photo[1]) {
-    photo = props.photo[1].picture_url
-  }
+  if (props.photo) {
+    photo = Object.values(props.photo).map( (photo) => {
+      return (
+        <img src={photo.picture_url}></img>
+      )
+    })
+  };
  
   return (
-    <img src={photo}></img>
+    <div>
+      {photo}    
+    </div>
+    
   );
 }

@@ -6,7 +6,7 @@ class PhotoIndex extends React.Component {
     super(props);
 
     this.state = {
-      posts: []
+      photos: []
     };
   }
 
@@ -17,9 +17,14 @@ class PhotoIndex extends React.Component {
   render() {
     let photo = this.props.photos
     return (
-      <div>
-        <PhotoIndexItem photo={photo}/>
-      </div>
+      <>
+        <div classname="photoIndexParent">
+          <h1>Explore</h1>
+          <div className="photoIndex">
+            <PhotoIndexItem className="photoIndexItem" photo={photo} />
+          </div>
+        </div>
+      </>
     );
   }
 }

@@ -1,0 +1,19 @@
+// Place all the styles related to the Photos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.photoIndexParent {
+  display: flex;
+  justify-content: center;
+}
+
+.photoIndex {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+.photoIndex img {
+  height: 300px;
+  width: auto;
+  margin: 2px;
+}
