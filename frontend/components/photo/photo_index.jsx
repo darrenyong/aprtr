@@ -15,15 +15,22 @@ class PhotoIndex extends React.Component {
   }
 
   render() {
-    let photo = this.props.photos
+    // console.log(this.props.photos)
+    let photos = this.props.photos.map( (photo) => {
+      return (
+        <PhotoIndexItem key={photo.id} photo={photo} />
+      )
+    })
     return (
       <>
-        <div classname="photoIndexParent">
-          <h1>Explore</h1>
-          <div className="photoIndex">
-            <PhotoIndexItem className="photoIndexItem" photo={photo} />
-          </div>
+      <h1>Explore</h1>
+      <div className="photoIndexParent">
+        <div className="photoIndex">
+        <ul>
+          {photos}
+        </ul>
         </div>
+      </div>
       </>
     );
   }

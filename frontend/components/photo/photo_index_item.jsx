@@ -1,19 +1,12 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
-export default function PhotoIndex(props) {
-  let photo;
-  if (props.photo) {
-    photo = Object.values(props.photo).map( (photo) => {
-      return (
-        <img src={photo.picture_url}></img>
-      )
-    })
-  };
- 
+export default function PhotoIndexItem(props) {
+  {console.log(props.photo.picture_url) }
+
   return (
-    <div>
-      {photo}    
-    </div>
-    
+    <img className="photoIndexItem" src={`${props.photo.picture_url}`}>
+      <Link 
+    </img>
   );
 }

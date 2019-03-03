@@ -22,7 +22,6 @@ export default class App extends React.Component {
       <div>
         {/* Nav bar & Footer */}
         <Route path="/" component={NavBarContainer} />
-        <Route path="/" component={FooterContainer} />
 
 
         <Switch>
@@ -40,6 +39,7 @@ export default class App extends React.Component {
           <Redirect to="/" />
         </Switch>
 
+        <Route path="/" component={FooterContainer} />
       </div>
     )
   }
