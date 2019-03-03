@@ -53,7 +53,7 @@ export const fetchPhoto = (id) => (dispatch) => {
 export const createPhoto = (photo) => (dispatch) => {
   return PhotoAPIUtil.createPhoto(photo)
   .then(
-    (photo) => (dispatch(receivePhoto(photo)),
+    (photo) => (dispatch(receivePhoto(photo))),
     (error) => (dispatch(receivePhotoErrors(error.responseJson)))
   );
 }
