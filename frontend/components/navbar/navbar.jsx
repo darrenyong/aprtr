@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export default(props) => {
   let display;
-  debugger
 
   if (props.currentUserId) {
     display = (<div>

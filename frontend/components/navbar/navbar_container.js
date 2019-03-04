@@ -4,8 +4,6 @@ import Navbar from "./navbar";
 import { deleteSession } from "../../actions/session";
 
 const mSP = (state, ownProps) => {
-  // console.log(state)
-  // debugger
   return ({
     currentUserId: state.session,
     currentUser: state.entities.users[state.session],

@@ -4,7 +4,6 @@ import { fetchPhoto } from '../../actions/photo';
 
 const mSP = (state, ownProps) => {
   let photoId = ownProps.match.params.id
-  // console.log(state)
   return ({
     photoId: photoId,
     photo: state.entities.photos[photoId]

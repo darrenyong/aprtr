@@ -4,7 +4,7 @@ import { Redirect, Route, withRouter } from "react-router-dom";
 
 const mSP = (state) => {
   return({
-    loggedIn: Boolean(state.session.currentUser)
+    loggedIn: Boolean(state.session)
   })
 }
 
@@ -23,10 +23,22 @@ const Protected = ({ loggedIn, path, component: Component }) => (
   <Route
     path={path}
     render={ (props) => (
-      loggedIn ? <Component {...props} /> : <Redirect to ="/signup" />
+      loggedIn ? <Component {...props} /> : <Redirect to ="/" />
+    )}
+  />
+);
+
+// Custom ROute to show different stuff on home
+const Splash = ({ loggedIn, exact, path, loggedInComponent: LoggedInComponent, loggedOutComponent: LoggedOutComponent }) => (
+  <Route
+    path={path}
+    exact={exact}
+    render={ (props) => (
+      loggedIn ? <LoggedInComponent {...props} /> : <LoggedOutComponent {...props} />
     )}
   />
 );
 
 export const AuthRoute = withRouter(connect(mSP, null)(Auth));
 export const ProtectedRoute = withRouter(connect(mSP, null)(Protected));
+export const SplashRoute = withRouter(connect(mSP, null)(Splash));
