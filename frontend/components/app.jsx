@@ -10,6 +10,7 @@ import NavBarContainer from "./navbar/navbar_container";
 import FooterContainer from "./footer/footer"
 import PhotoIndexContainer from "./photo/photo_index_container"
 import PhotoShowContainer from "./photo/photo_show_container"
+import PhotoUploadContainer from "./photo/photo_upload"
 
 export default class App extends React.Component {
   constructor(props) {
@@ -23,15 +24,18 @@ export default class App extends React.Component {
         <Route path="/" component={NavBarContainer} />
         <Route path="/" component={FooterContainer} />
 
-        {/* Sign Up & Log In */}
-        <AuthRoute path="/signup" component={SignupContainer} />
-        <AuthRoute path="/login" component={LoginContainer} />
-
-        {/* Splash Page */}
-        <SplashRoute exact path="/" loggedInComponent={PhotoIndexContainer} loggedOutComponent={SplashContainer}/>
-
         <Switch>
+          {/* Sign Up & Log In */}
+          <AuthRoute path="/signup" component={SignupContainer} />
+          <AuthRoute path="/login" component={LoginContainer} />
+
+          {/* Photos */}
+          <ProtectedRoute exact path="/photos/upload" component={PhotoUploadContainer} />
           <ProtectedRoute exact path="/photos/:id" component={PhotoShowContainer} />
+
+          {/* Splash Page */}
+          <SplashRoute exact path="/" loggedInComponent={PhotoIndexContainer} loggedOutComponent={SplashContainer}/>
+
           {/* Redirect */}
           <Redirect to="/" />
         </Switch>
