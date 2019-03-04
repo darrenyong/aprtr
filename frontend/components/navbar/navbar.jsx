@@ -5,9 +5,8 @@ export default(props) => {
   let display;
 
   if (props.currentUserId) {
-    display = (<div>
-      <Link to="/photos/upload">Upload</Link>
-      <p>Hello, {props.currentUser.username}</p>
+    display = (<div className="navbar-logged-in">
+      <Link to="/photos/upload"><i class="fas fa-cloud-upload-alt"></i></Link>
       <button onClick={props.logout}>Log Out</button>
     </div>);
   } else if (props.isAuthPath === true) {

@@ -41,3 +41,18 @@
 .signup-btn:hover {
   color:#7f7f7f;
 }
+
+.fa-cloud-upload-alt, .fa-cloud-upload-alt:visited, .fa-cloud-upload-alt:hover {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.navbar-logged-in {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 125px;
+  height: 50px;
+  margin-right: 40px;
+}
