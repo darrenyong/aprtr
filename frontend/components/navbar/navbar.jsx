@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 export default(props) => {
   let display;
+  debugger
 
-  if (props.currentUser) {
+  if (props.currentUserId) {
     display = (<div>
       <p>Hello, {props.currentUser.username}</p>
       <button onClick={props.logout}>Log Out</button>

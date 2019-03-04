@@ -4,8 +4,11 @@ import Navbar from "./navbar";
 import { deleteSession } from "../../actions/session";
 
 const mSP = (state, ownProps) => {
+  // console.log(state)
+  // debugger
   return ({
-    currentUser: state.session.currentUser,
+    currentUserId: state.session,
+    currentUser: state.entities.users[state.session],
     isAuthPath: (ownProps.location.pathname === "/login" || ownProps.location.pathname === "/signup")
   })
 }

@@ -9,18 +9,23 @@ import * as SessionAPI from "./utils/session_api_util"
 
 document.addEventListener("DOMContentLoaded", () => {
   const rootEl = document.getElementById("root");
-  let preloadedState = undefined;
+  let preloadedState, store;
 
   if (window.currentUser) {
     preloadedState = {
-      session: {
-        currentUser: window.currentUser
+      session: window.currentUser.id,
+      entities: {
+        users: {
+          [window.currentUser.id]: window.currentUser
+        }
       }
     };
+    store = configureStore(preloadedState);
     delete window.currentUser;
+  } else {
+    store = configureStore(preloadedState);
   }
 
-  let store = configureStore(preloadedState);
   window.getState = store.getState;
   window.deleteSession = deleteSession;
   ReactDOM.render(<Root store={store}/>, rootEl)
@@ -30,11 +35,4 @@ document.addEventListener("DOMContentLoaded", () => {
 // Test
 window.SessionAPI = SessionAPI
 
-// preloadedState = {
-//   session: window.currentUser.id,
-//   entities: {
-//     users: {
-//       [window.currentUser.id]: window.currentUser
-//     }
-//   }
-// };
+
