@@ -1,4 +1,4 @@
-import * as UserAPIUtil from "../utils/session_api_util"
+import * as UserAPIUtil from "../utils/user_api_util"
 
 // Constants
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER"
