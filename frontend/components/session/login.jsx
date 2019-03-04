@@ -62,6 +62,7 @@ class Login extends React.Component {
           <form>
             <label>
               <input
+                className="session-username"
                 type="text"
                 onChange={this.update("username")}
                 placeholder="Username"
@@ -70,6 +71,7 @@ class Login extends React.Component {
             <br />
             <label>
               <input
+                className="session-password"
                 type="password"
                 placeholder="Password"
                 onChange={this.update("password")}
