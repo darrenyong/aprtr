@@ -9,6 +9,7 @@ import LoginContainer from "./session/login_container";
 import NavBarContainer from "./navbar/navbar_container";
 import FooterContainer from "./footer/footer"
 import PhotoIndex from "./photo/photo_index_container"
+import PhotoShowContainer from "./photo/photo_show_container"
 
 export default class App extends React.Component {
   constructor(props) {
@@ -25,12 +26,11 @@ export default class App extends React.Component {
 
 
         <Switch>
-          {/* <AuthRoute path="/photos" /> */}
+          <Route exact path="/photos/:id" component={PhotoShowContainer} />
 
           {/* Sign Up & Log In */}
           <AuthRoute path="/signup" component={SignupContainer} />
           <AuthRoute path="/login" component={LoginContainer} />
-
           {/* Splash Page */}
           {currentUser ? <Route exact path="/" component={PhotoIndex} /> : <Route exact path="/" component={SplashContainer} />}
           
