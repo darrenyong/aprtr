@@ -10,7 +10,7 @@ import NavBarContainer from "./navbar/navbar_container";
 import FooterContainer from "./footer/footer"
 import PhotoIndexContainer from "./photo/photo_index_container"
 import PhotoShowContainer from "./photo/photo_show_container"
-import PhotoUploadContainer from "./photo/photo_upload"
+import PhotoUploadContainer from "./photo/create_photo_form_container"
 
 export default class App extends React.Component {
   constructor(props) {

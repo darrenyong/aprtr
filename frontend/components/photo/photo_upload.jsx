@@ -7,7 +7,7 @@ class PhotoForm extends React.Component {
     this.state = {
       title: "",
       description: "",
-      photoFile: null
+      picture: null
     }
 
     this.update = this.update.bind(this);
@@ -16,26 +16,31 @@ class PhotoForm extends React.Component {
   }
 
   update(field) {
-    return ( (e) => {
+    return (e) => {
       this.setState({
-        [field]: e.target.value
+        [field]: e.currentTarget.value
       })
-    })
+    }
   }
 
   handleFile(e) {
     this.setState({
-      photoFile: e.currentTarget.files[0]
+      picture: e.currentTarget.files[0]
     })
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createPhoto(this.state)
+    // debugger
+    const formData = new FormData();
+    formData.append("photo[title]", this.state.title);
+    formData.append("photo[description]", this.state.description);
+    formData.append("photo[picture]", this.state.picture);
+    this.props.action(formData);
   }
 
   render() {
-    console.log(this.state)
+    
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
@@ -49,7 +54,7 @@ class PhotoForm extends React.Component {
         <br/>
 
         <label>
-          Body          
+          Description          
           <input 
             type="text"
             value={this.state.description}
