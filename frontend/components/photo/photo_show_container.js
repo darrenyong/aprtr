@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import PhotoShow from './photo_show';
 import { fetchPhoto } from '../../actions/photo';
 
-const mSP = (state, ownProps) => {
+const mSP = (state) => {
   let photoId = ownProps.match.params.id
   return ({
     photoId: photoId,

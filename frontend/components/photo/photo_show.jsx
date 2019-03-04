@@ -15,7 +15,7 @@ class PhotoShow extends React.Component {
   render() {
     let photo;
     if (this.props.photo) {
-      photo = this.props.photo.photo_url
+      photo = this.props.photo.photoUrl
     }
 
     return (
