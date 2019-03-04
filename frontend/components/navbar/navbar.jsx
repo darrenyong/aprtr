@@ -6,6 +6,7 @@ export default(props) => {
 
   if (props.currentUserId) {
     display = (<div>
+      <Link to="/photos/upload">Upload</Link>
       <p>Hello, {props.currentUser.username}</p>
       <button onClick={props.logout}>Log Out</button>
     </div>);
