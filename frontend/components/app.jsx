@@ -31,7 +31,7 @@ export default class App extends React.Component {
         <SplashRoute exact path="/" loggedInComponent={PhotoIndexContainer} loggedOutComponent={SplashContainer}/>
 
         <Switch>
-          <Route exact path="/photos/:id" component={PhotoShowContainer} />
+          <ProtectedRoute exact path="/photos/:id" component={PhotoShowContainer} />
           {/* Redirect */}
           <Redirect to="/" />
         </Switch>
