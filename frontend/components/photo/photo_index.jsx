@@ -4,10 +4,6 @@ import PhotoIndexItem from './photo_index_item';
 class PhotoIndex extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      photos: []
-    };
   }
 
   componentDidMount() {
@@ -15,7 +11,6 @@ class PhotoIndex extends React.Component {
   }
 
   render() {
-    // console.log(this.props.photos)
     let photos = this.props.photos.map( (photo) => {
       return (
         <PhotoIndexItem key={photo.id} photo={photo} />
