@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PhotoShow from './photo_show';
-import { fetchPhoto } from '../../actions/photo';
+import { fetchPhoto, deletePhoto } from '../../actions/photo';
 
 const mSP = (state, ownProps) => {
   let photoId = ownProps.match.params.id
@@ -12,7 +12,8 @@ const mSP = (state, ownProps) => {
 
 const mDP = (dispatch) => {
   return ({
-    fetchPhoto: (id) => dispatch(fetchPhoto(id))
+    fetchPhoto: (id) => dispatch(fetchPhoto(id)),
+    deletePhoto: (photo) => dispatch(deletePhoto(photo))
   })
 }
 
