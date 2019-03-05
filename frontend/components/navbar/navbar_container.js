@@ -4,10 +4,12 @@ import Navbar from "./navbar";
 import { deleteSession } from "../../actions/session";
 
 const mSP = (state, ownProps) => {
+  console.log(ownProps.location.pathname)
   return ({
     currentUserId: state.session,
     currentUser: state.entities.users[state.session],
-    isAuthPath: (ownProps.location.pathname === "/login" || ownProps.location.pathname === "/signup")
+    isAuthPath: (ownProps.location.pathname === "/login" || ownProps.location.pathname === "/signup"),
+    isUploadPath: (ownProps.location.pathname === "/photos/upload"),
   })
 }
 

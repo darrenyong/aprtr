@@ -1,7 +1,13 @@
-.navbar, .navbar-btn {
+.navbar, .navbar-btn, .navbar-logged-in {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.navbar-logged-in {
+  background: #202023;
+  height: 63px;
+  font-family: Helvetica;
 }
 
 .navbar {
@@ -42,13 +48,17 @@
   color:#7f7f7f;
 }
 
-.fa-cloud-upload-alt, .fa-cloud-upload-alt:visited, .fa-cloud-upload-alt:hover {
+.fa-cloud-upload-alt, .fa-cloud-upload-alt:visited{
   color: white;
   text-decoration: none;
   font-size: 25px;
 }
 
-.navbar-logged-in {
+.fa-cloud-upload-alt:hover {
+  color: #bcbcbd;
+}
+
+.navbar-logged-in-btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
