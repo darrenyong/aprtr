@@ -13,7 +13,7 @@ const mSP = (state, ownProps) => {
 const mDP = (dispatch) => {
   return ({
     fetchPhoto: (id) => dispatch(fetchPhoto(id)),
-    deletePhoto: (photo) => dispatch(deletePhoto(photo))
+    deletePhoto: (id) => dispatch(deletePhoto(id))
   })
 }
 

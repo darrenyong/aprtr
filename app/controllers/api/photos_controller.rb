@@ -50,7 +50,6 @@ class Api::PhotosController < ApplicationController
 
     if @photo
       @photo.destroy
-      render :index
     else
       render json ["Photo not found"], status: 404
     end

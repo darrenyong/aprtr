@@ -18,9 +18,9 @@ const receivePhoto = (photo) => ({
   photo: photo
 })
 
-const removePhoto = (photo) => ({
+const removePhoto = (id) => ({
   type: REMOVE_PHOTO,
-  photoId: photo.id
+  id: id
 })
 
 const receivePhotoErrors = (errors) => ({
@@ -66,9 +66,9 @@ export const updatePhoto = (photo) => (dispatch) => {
   );
 }
 
-export const deletePhoto = (photo) => (dispatch) => {
-  return PhotoAPIUtil.deletePhoto(photo)
+export const deletePhoto = (id) => (dispatch) => {
+  return PhotoAPIUtil.deletePhoto(id)
   .then(
-    (photo) => (dispatch(removePhoto(photo)))
+    (id) => (dispatch(removePhoto(id)))
   );
 }

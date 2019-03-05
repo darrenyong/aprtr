@@ -1,6 +1,13 @@
 import React from 'react';
+import { EditPhotoForm } from '../photo/edit_photo_form_container'
 
 class PhotoShow extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.props.fetchPhoto(this.props.match.params.id);
@@ -12,6 +19,10 @@ class PhotoShow extends React.Component {
     this.props.fetchPhoto(photoId)
   }
 
+  handleDelete(e) {
+    this.props.deletePhoto(this.props.photo.id).then((res) => this.props.history.push("/"))
+  }
+  
   render() {
     console.log(this.props)
     let photo;
@@ -30,7 +41,10 @@ class PhotoShow extends React.Component {
         <div className="imageShow-container">
           <img className="imageShow-photo" src={`${photo}`} />
           <div className="imageShow-delete">
-              <i className="fas fa-trash-alt" onClick={this.props.deletePhoto(this.props.photo)}></i>
+              <i 
+                className="fas fa-trash-alt"
+                onClick={this.handleDelete}
+              ></i>
           </div>
         </div>
       </div>
@@ -39,6 +53,7 @@ class PhotoShow extends React.Component {
         <div className="image-details-container">
           <h1>{title}</h1>
           <h2>{description}</h2>
+          <EditPhotoForm />
         </div>
       </div>
       </>
