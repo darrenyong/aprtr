@@ -8,7 +8,8 @@ class PhotoForm extends React.Component {
       title: "",
       description: "",
       picture: null,
-      uploadState: 0
+      uploadState: 0,
+      photoUrl: null
     }
 
     this.update = this.update.bind(this);
@@ -25,10 +26,18 @@ class PhotoForm extends React.Component {
   }
 
   handleFile(e) {
-    this.setState({
-      picture: e.currentTarget.files[0],
-      uploadState: 1
-    })
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader;
+    fileReader.onloadend = () => {   
+      this.setState({
+        picture: file,
+        photoUrl: fileReader.result,
+        uploadState: 1
+      })
+    }
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
   handleSubmit(e) {
@@ -42,34 +51,69 @@ class PhotoForm extends React.Component {
   }
 
   render() {
+    // Checks to see which part of the upload stage the user is at
     let uploadPage = this.state.uploadState
+    const preview = this.state.photoUrl ? <img className="upload2-preview" src={this.state.photoUrl} /> : null;
+    
+    // State that is rendered when the user is on the first upload stage
+    let uploadState0 = (
+    <div className="upload1-parent">
+      <div className="upload1-form">
+        <div className="upload1-text">
+          <p>Drag & drop photos here</p>
+        </div>
+        <div className="upload1-form">
+          <label className="upload1-btn" htmlFor="upload1-photo">Choose a photo to upload</label>
+          <input
+            name="upload1-photo"
+            id="upload1-photo"
+            type="file"
+            onChange={this.handleFile}
+          />
+        </div>
+      </div>
+      <br />
+
+    </div>
+    )
+
+    // State that is rendered when the user is on the second upload stage
+    let uploadState1 = (
+      <div className="upload2-parent">
+        <form className="upload2-form" onSubmit={this.handleSubmit}>
+          <div className="upload2-form-title">
+            Upload Photo:
+          </div>
+          <div className="upload2-form-input">
+            <input
+              className="test"
+              type="text"
+              value={this.state.title}
+              onChange={this.update("title")}
+              placeholder="Add a title"
+              />
+            <br />
+            <input
+              type="text"
+              value={this.state.description}
+              onChange={this.update("description")}
+              placeholder="Add a description"
+              />
+            <br />
+          </div>
+          <button className="upload2-btn">Upload</button>
+        </form>
+
+
+        {preview}
+      </div>
+    )
+
 
     if (uploadPage === 0) {
-      return (
-        <div className="photo-parent">
-          <div className="upload1-form">
-            <div className="upload-text">
-              <p>Drag & drop photos here or</p>
-            </div>
-            <div className="upload-form">
-              <label className="upload-btn" for="photo-upload">Choose a photo to upload</label>
-              <input 
-                name="photo-upload"
-                id="photo-upload"
-                type="file"
-                onChange={this.handleFile}
-              />
-            </div>
-          </div>
-          <br/>
-  
-        </div>
-      )
+      return (uploadState0)
     } else if (uploadPage === 1) {
-      return (
-      <div className="photo-parent">
-      </div>
-      )
+      return (uploadState1)
     }
   }
 }

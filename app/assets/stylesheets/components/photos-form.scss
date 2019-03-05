@@ -1,5 +1,5 @@
 // First Upload Page
-.photo-parent {
+.upload1-parent {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -8,20 +8,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #2b2b2b;
+  background-color: #404040;
+  background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
   z-index: -1;
 }
 
-.upload-text {
+.upload1-text {
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
   font-size: 20px;
   font-weight: 400;
   text-align: center;
   padding: 20px;
 }
 
-.upload-text p {
+.upload1-text p {
   padding: 10px;
 }
 
@@ -34,29 +35,110 @@
   margin-bottom: 40px;
 }
 
-.upload-btn {
+.upload1-btn {
   background: #3c63dc;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
   border-radius: 5px;
   font-size: 20px;
   padding: 9px 15px;
-  text-shadow: 1px 1px rgba(0, 0, 0, .5)
+  text-shadow: 1px 1px rgba(0, 0, 0, .3)
 }
 
-.upload-btn:hover {
+.upload1-btn:hover {
   cursor: pointer;
   background: #3254bc;
 }
 
-#photo-upload {
+#upload1-photo {
   display: none;
 }
 
 // Second Upload Page
-.photo-upload-form {
+.upload2-parent {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
-  justify-content: center;  
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #404040;
+  background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+  z-index: -1;
+  padding-top: 100px;
+}
+
+.upload2-form {
+  background: rgba(0, 0, 0, 0.2);
+  height: 700px;
+  width: 200px;
+  margin-left: 30px;
+  color: #e3e3e3;
+  border: 2px solid #3b3b3b;
+  font-family: Helvetica, sans-serif;
+  margin-right: 30px;
+}
+
+.upload2-form-title {
+  border-width: 0px 0px 2px 0px;
+  border-style: solid;
+  border-color: #3b3b3b;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.upload2-form-input {
+  padding: 15px 20px;
+  border-width: 0px 0px 2px 0px;
+  border-style: solid;
+  border-color: #3b3b3b;
+}
+
+.upload2-form-input input {
+  margin: 5px;
+  padding: 10px;
+  background: none;
+  border: none;
+  font-size: 12px;
+  color: #e3e3e3;
+}
+
+.upload2-form-input input:focus {
+  border-radius: 5px;
   background: white;
-  height: 200px;
+  outline: none;
+}
+
+.upload2-preview {
+  height: 700px;
+  width: auto;
+  display: flex;
+  justify-content: flex-start;
+  border: 2px solid #ee0185;
+}
+
+.upload2-btn {
+  text-align: center;
+  width: 100px;
+  margin: 20px 50px 0px 50px;
+  background: #44bb4e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.upload2-btn:hover {
+  cursor: pointer;
+  background: #3ca745;
+}
+
+.upload2-btn:active {
+  margin: 21px 49px 0px 51px;
+}
+
+.upload2-btn:focus {
+  outline: none;
 }
