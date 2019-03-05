@@ -51,7 +51,7 @@
 }
 
 .upload1-btn:active {
-  margin: 1px 0px 0px 1px;
+  background: #2b48a1;
 }
 
 #upload1-photo {
@@ -91,6 +91,7 @@
   border-color: #3b3b3b;
   padding: 15px 20px;
   text-align: center;
+  font-size: 20px;
 }
 
 .upload2-form-input {
@@ -101,12 +102,13 @@
 }
 
 .upload2-form-input input {
-  margin: 5px;
-  padding: 10px;
+  margin: 3px;
+  padding: 9px;
   background: none;
   border: none;
-  font-size: 12px;
+  font-size: 13px;
   color: white;
+  width: 130px;
 }
 
 .upload2-form-input input:focus {
@@ -126,13 +128,14 @@
 
 .upload2-btn {
   text-align: center;
-  width: 100px;
-  margin: 20px 50px 0px 50px;
+  width: 120px;
+  margin: 20px 40px 0px 40px;
   background: #44bb4e;
   color: white;
   border: none;
   border-radius: 5px;
-  height: 30px;
+  height: 35px;
+  font-size: 13px;
 }
 
 .upload2-btn:hover {
@@ -141,7 +144,7 @@
 }
 
 .upload2-btn:active {
-  margin: 21px 49px 0px 51px;
+  background: #379504;
 }
 
 .upload2-btn:focus {
