@@ -1,0 +1,62 @@
+// First Upload Page
+.photo-parent {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2b2b2b;
+  z-index: -1;
+}
+
+.upload-text {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  padding: 20px;
+}
+
+.upload-text p {
+  padding: 10px;
+}
+
+.upload1-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  margin-bottom: 40px;
+}
+
+.upload-btn {
+  background: #3c63dc;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 9px 15px;
+  text-shadow: 1px 1px rgba(0, 0, 0, .5)
+}
+
+.upload-btn:hover {
+  cursor: pointer;
+  background: #3254bc;
+}
+
+#photo-upload {
+  display: none;
+}
+
+// Second Upload Page
+.photo-upload-form {
+  display: flex;
+  justify-content: center;  
+  background: white;
+  height: 200px;
+}
