@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 class PhotoForm extends React.Component {
   constructor(props) {
@@ -48,13 +49,14 @@ class PhotoForm extends React.Component {
     formData.append("photo[description]", this.state.description);
     formData.append("photo[picture]", this.state.picture);
     this.props.action(formData);
+    this.props.history.push("/");
   }
 
   render() {
     // Checks to see which part of the upload stage the user is at
     let uploadPage = this.state.uploadState
     const preview = this.state.photoUrl ? <img className="upload2-preview" src={this.state.photoUrl} /> : null;
-    
+
     // State that is rendered when the user is on the first upload stage
     let uploadState0 = (
     <div className="upload1-parent">
@@ -101,6 +103,7 @@ class PhotoForm extends React.Component {
               />
             <br />
           </div>
+          
           <button className="upload2-btn">Upload</button>
         </form>
 
