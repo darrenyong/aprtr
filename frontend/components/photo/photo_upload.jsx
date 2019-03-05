@@ -7,7 +7,8 @@ class PhotoForm extends React.Component {
     this.state = {
       title: "",
       description: "",
-      picture: null
+      picture: null,
+      uploadState: 0
     }
 
     this.update = this.update.bind(this);
@@ -25,7 +26,8 @@ class PhotoForm extends React.Component {
 
   handleFile(e) {
     this.setState({
-      picture: e.currentTarget.files[0]
+      picture: e.currentTarget.files[0],
+      uploadState: 1
     })
   }
 
@@ -40,38 +42,57 @@ class PhotoForm extends React.Component {
   }
 
   render() {
-    
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Title
-          <input 
-            type="text" 
-            value={this.state.title}
-            onChange={this.update("title")}
-          />
-        </label>
-        <br/>
+    let uploadPage = this.state.uploadState
 
-        <label>
-          Description          
-          <input 
-            type="text"
-            value={this.state.description}
-            onChange={this.update("description")}
-          />
-        </label>
-        <br/>
+    if (uploadPage === 0) {
+      return (
+        <div className="photo-parent">
+          <div className="upload1-form">
+            <div className="upload-text">
+              <p>Drag & drop photos here or</p>
+            </div>
+            <div className="upload-form">
+              <label className="upload-btn" for="photo-upload">Choose a photo to upload</label>
+              <input 
+                name="photo-upload"
+                id="photo-upload"
+                type="file"
+                onChange={this.handleFile}
+              />
+            </div>
+          </div>
+          <br/>
+  
+        </div>
+      )
+    } else if (uploadPage === 1) {
+      return (
+      <div className="photo-parent">
+        <form className="photo-upload-form" onSubmit={this.handleSubmit}>
+          <label>
+            Title
+              <input
+              type="text"
+              value={this.state.title}
+              onChange={this.update("title")}
+            />
+          </label>
+          <br />
 
-        <input 
-          type="file"
-          onChange={this.handleFile}
-        />
-        <br/>
-
-        <button>Upload!</button>
-      </form>
-    )
+          <label>
+            Description
+              <input
+              type="text"
+              value={this.state.description}
+              onChange={this.update("description")}
+            />
+          </label>
+          <br />
+          <button className="upload-btn">Choose a photo to upload</button>
+        </form>
+      </div>
+      )
+    }
   }
 }
 
