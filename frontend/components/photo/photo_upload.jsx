@@ -68,28 +68,6 @@ class PhotoForm extends React.Component {
     } else if (uploadPage === 1) {
       return (
       <div className="photo-parent">
-        <form className="photo-upload-form" onSubmit={this.handleSubmit}>
-          <label>
-            Title
-              <input
-              type="text"
-              value={this.state.title}
-              onChange={this.update("title")}
-            />
-          </label>
-          <br />
-
-          <label>
-            Description
-              <input
-              type="text"
-              value={this.state.description}
-              onChange={this.update("description")}
-            />
-          </label>
-          <br />
-          <button className="upload-btn">Choose a photo to upload</button>
-        </form>
       </div>
       )
     }
