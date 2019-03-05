@@ -47,8 +47,7 @@ class PhotoForm extends React.Component {
     formData.append("photo[title]", this.state.title);
     formData.append("photo[description]", this.state.description);
     formData.append("photo[picture]", this.state.picture);
-    this.props.action(formData);
-    this.props.history.push("/");
+    this.props.action(formData).then((res) => this.props.history.push(`/photos/${res.photo.id}`));
   }
 
   render() {
