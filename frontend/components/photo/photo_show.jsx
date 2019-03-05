@@ -19,8 +19,8 @@ class PhotoShow extends React.Component {
     }
 
     return (
-      <div>
-        <img src={`${photo}`} />
+      <div className="image-show-parent">
+        <img className="image-show" src={`${photo}`} />
       </div>
     );
   }

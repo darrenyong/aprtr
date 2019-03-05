@@ -43,7 +43,6 @@ class PhotoForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // debugger
     const formData = new FormData();
     formData.append("photo[title]", this.state.title);
     formData.append("photo[description]", this.state.description);

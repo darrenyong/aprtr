@@ -18,12 +18,16 @@ class PhotoIndex extends React.Component {
     })
     return (
       <>
-      <h1>Explore</h1>
-      <div className="photoIndexParent">
-        <div className="photoIndex">
-        <ul>
-          {photos}
-        </ul>
+      <div className="photoIndex-parent">
+        <div className="photoIndex-container">
+          <h1>Explore</h1>
+          <div className="photoIndexParent">
+            <div className="photoIndex">
+            <ul>
+              {photos}
+            </ul>
+            </div>
+          </div>
         </div>
       </div>
       </>
