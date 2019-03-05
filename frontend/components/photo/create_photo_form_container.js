@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import PhotoForm from "./photo_upload";
 import { createPhoto } from "../../actions/photo"
 
-const mSP = (state) => {
+const mSP = (state, ownProps) => {
   return ({
     photo: {title: "", body: ""}
   })
