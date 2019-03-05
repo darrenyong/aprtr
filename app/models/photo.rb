@@ -12,6 +12,7 @@
 
 class Photo < ApplicationRecord
   validates :uploader_id, presence: true
+  validate :ensure_photo
 
   belongs_to :user,
     primary_key: :id,
@@ -19,4 +20,12 @@ class Photo < ApplicationRecord
     class_name: 'User'
     
   has_one_attached :picture
+
+
+  def ensure_photo
+    unless self.photo.attached?
+      errors[:photo] << "Photo must be attached!"
+    end
+  end
+
 end
