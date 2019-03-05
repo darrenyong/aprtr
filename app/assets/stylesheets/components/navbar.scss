@@ -4,16 +4,23 @@
   align-items: center;
 }
 
+
 .navbar-logged-in {
   background: black;
   height: 63px;
   font-family: Helvetica;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .navbar {
   background: rgba(0, 0, 0, 0.4);
   height: 63px;
   font-family: "Helvetica";
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .navbar-logo, .login-btn {
