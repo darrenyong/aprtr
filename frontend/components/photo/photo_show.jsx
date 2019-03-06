@@ -6,11 +6,11 @@ class PhotoShow extends React.Component {
     super(props)
    
     this.state = {
-      captionEdit: false
+      photoEdit: false
     }
 
     this.handleDelete = this.handleDelete.bind(this);
-    this.handleEdit = this.handleEdit.bind(this);
+    this.toggleEdit = this.toggleEdit.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -29,10 +29,8 @@ class PhotoShow extends React.Component {
     this.props.deletePhoto(this.props.photo.id).then((res) => this.props.history.push("/"))
   }
 
-  handleEdit(e) {
-    this.setState({
-      captionEdit: true
-    })
+  toggleEdit(e) {
+    this.setState((oldState) => ({photoEdit: !oldState.photoEdit}))
   }
   
   render() {
@@ -43,13 +41,17 @@ class PhotoShow extends React.Component {
       description = this.props.photo.description
     }
 
-    if (this.state.captionEdit) {
+    if (this.state.photoEdit) {
       display = (
-        <EditPhotoForm photo={this.props.photo} updatePhoto={this.props.updatePhoto}/>
+        <EditPhotoForm 
+          photo={this.props.photo} 
+          updatePhoto={this.props.updatePhoto}
+          toggleEdit={this.toggleEdit} 
+        />
       ) } else {
         display = (
         <>
-          <div onClick={this.handleEdit} className="photoDetails-child">
+          <div onClick={this.toggleEdit} className="photoDetails-child">
             <h1>{title}</h1>
             <h2>{description}</h2>
           </div>

@@ -13,10 +13,9 @@ export class EditPhotoForm extends React.Component {
   constructor(props) {
     super(props)
 
+    let { id, title, description } = this.props.photo
     this.state = {
-      id: this.props.photo.id,
-      title: this.props.photo.title,
-      description: this.props.photo.description
+      id, title, description
     }
 
     this.update = this.update.bind(this);
@@ -34,10 +33,10 @@ export class EditPhotoForm extends React.Component {
  handleSubmit(e) {
    e.preventDefault();
    this.props.updatePhoto(this.state);
+   this.props.toggleEdit(e);
  }
 
   render() {
-    console.log(this.props)
     return (
       <form className="photoEdit-form" onSubmit={this.handleSubmit}>
          <input
