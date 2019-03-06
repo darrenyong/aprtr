@@ -1,0 +1,54 @@
+// Place all the styles related to the Photos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Photo Index Page
+.photoIndex-parent {
+  display: flex;
+  justify-content: center;
+  background: #f3f5f6;
+  z-index: -1;
+  margin-top: 63px;
+  padding-top: 2px;
+  margin-bottom: 52px;
+  padding-bottom: 53px;
+}
+
+.photoIndex-container {
+  width: 1500px;
+}
+
+.photoIndex-container h1 {
+  font-size: 24px;
+  padding: 20px 0px 10px 1px;
+  font-family: Helvetica;
+  font-weight: 300;
+}
+
+.photoIndexItem {
+  height: 300px;
+  width: auto;
+  margin: 1px 2px;
+}
+
+// .photoIndexItem-overlay {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   display: none;
+// }
+
+// .photoIndexItem-parent {
+//   position: relative;
+//   z-index: 0
+// }
+
+// .photoIndexItem-parent:hover .photoIndexItem-overlay {
+//   margin: 0px 1px 2px 0px;
+//   display: block;
+//   bottom: 0;
+//   background: rgba(0, 0, 0, 0.2);
+// }
+
