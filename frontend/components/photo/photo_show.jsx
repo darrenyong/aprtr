@@ -30,7 +30,6 @@ class PhotoShow extends React.Component {
   }
 
   handleEdit(e) {
-    console.log(this.state.captionEdit);
     this.setState({
       captionEdit: true
     })
@@ -51,8 +50,8 @@ class PhotoShow extends React.Component {
       ) } else {
         display = (
         <>
-        <h1>{title}</h1>
-        <h2>{description}</h2>
+          <h1>{title}</h1>
+          <h2>{description}</h2>
         </>
         );
       }

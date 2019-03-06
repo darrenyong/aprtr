@@ -18,11 +18,13 @@ export default class App extends React.Component {
   }
 
   render() {
+      // history.scrollRestoration = "manual"
     return (
       <div>
         {/* Nav bar & Footer */}
         <Route path="/" component={NavBarContainer} />
         <Route path="/" component={FooterContainer} />
+
 
         <Switch>
           {/* Sign Up & Log In */}

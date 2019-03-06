@@ -4,9 +4,19 @@ import PhotoIndexItem from './photo_index_item';
 class PhotoIndex extends React.Component {
   constructor(props) {
     super(props);
+
+    this.position = null;
   }
 
+  // componentWillUnmount() {
+  //   this.position = window.pageYOffset
+  //   console.log(this.position);
+  // }
+
   componentDidMount() {
+    // debugger
+    // console.log(window.pageYOffset);
+    // window.scrollTo(0, window.pageYOffset);
     this.props.fetchAllPhotos();
   }
 
