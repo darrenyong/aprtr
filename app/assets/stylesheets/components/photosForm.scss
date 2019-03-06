@@ -1,5 +1,4 @@
-// First Upload Page
-.upload1-parent {
+.upload1-parent, .upload2-parent {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -7,6 +6,10 @@
   right: 0;
   display: flex;
   justify-content: center;
+}
+
+// First Upload Page
+.upload1-parent {
   align-items: center;
   background-color: #404040;
   background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
@@ -60,14 +63,7 @@
 
 // Second Upload Page
 .upload2-parent {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   background-color: #404040;
   background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
   z-index: -1;
