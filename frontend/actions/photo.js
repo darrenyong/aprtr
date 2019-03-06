@@ -46,7 +46,7 @@ export const fetchPhoto = (id) => (dispatch) => {
   return PhotoAPIUtil.fetchPhoto(id)
   .then(
     (photo) => (dispatch(receivePhoto(photo))),
-    (error) => (dispatch(receivePhotoErrors(error.responseJson)))
+    (error) => (dispatch(receivePhotoErrors(error.responseJSON)))
   );
 }
 
@@ -54,7 +54,7 @@ export const createPhoto = (photo) => (dispatch) => {
   return PhotoAPIUtil.createPhoto(photo)
   .then(
     (photo) => (dispatch(receivePhoto(photo))),
-    (error) => (dispatch(receivePhotoErrors(error.responseJson)))
+    (error) => (dispatch(receivePhotoErrors(error.responseJSON)))
   );
 }
 
@@ -62,7 +62,7 @@ export const updatePhoto = (photo) => (dispatch) => {
   return PhotoAPIUtil.updatePhoto(photo)
   .then(
     (photo) => (dispatch(receivePhoto(photo))),
-    (error) => (dispatch(receivePhotoErrors(error.responseJson)))
+    (error) => (dispatch(receivePhotoErrors(error.responseJSON)))
   );
 }
 

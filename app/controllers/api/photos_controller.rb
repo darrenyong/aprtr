@@ -51,7 +51,7 @@ class Api::PhotosController < ApplicationController
     if @photo
       @photo.destroy
     else
-      render json ["Photo not found"], status: 404
+      render json: ["Photo not found"], status: 404
     end
   end
   
