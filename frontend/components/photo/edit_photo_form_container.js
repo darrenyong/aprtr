@@ -50,6 +50,8 @@ export class EditPhotoForm extends React.Component {
          <textarea
             className="photoEdit-description"
             type="text"
+            wrap="hard"
+            rows="10"
             placeholder = "Add description"
             value={this.state.description}
             onChange = {this.update("description")}
