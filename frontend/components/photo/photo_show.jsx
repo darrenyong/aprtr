@@ -36,7 +36,6 @@ class PhotoShow extends React.Component {
   }
   
   render() {
-    console.log(this.props)
     let photo, title, description, display;
     if (this.props.photo) {
       photo = this.props.photo.photoUrl
@@ -46,23 +45,25 @@ class PhotoShow extends React.Component {
 
     if (this.state.captionEdit) {
       display = (
-        <EditPhotoForm />
+        <EditPhotoForm photo={this.props.photo} updatePhoto={this.props.updatePhoto}/>
       ) } else {
         display = (
         <>
-          <h1>{title}</h1>
-          <h2>{description}</h2>
+          <div onClick={this.handleEdit} className="photoDetails-child">
+            <h1>{title}</h1>
+            <h2>{description}</h2>
+          </div>
         </>
         );
       }
 
     return (
       <>
-      <div className="imageShow-parent">
+      <div className="photoShow-parent">
         {/* Need a back to explore page here */}
-        <div className="imageShow-container">
-          <img className="imageShow-photo" src={`${photo}`} />
-          <div className="imageShow-delete">
+        <div className="photoShow-container">
+          <img className="photoShow-photo" src={`${photo}`} />
+          <div className="photoShow-delete">
               <i 
                 className="fas fa-trash-alt"
                 onClick={this.handleDelete}
@@ -71,11 +72,9 @@ class PhotoShow extends React.Component {
         </div>
       </div>
 
-      <div className="image-details-parent">
-        <div className="image-details-container">
-          <div onClick={this.handleEdit} className="image-details-child">
-            {display}
-          </div>
+      <div className="photoDetails-parent">
+        <div className="photoDetails-container">
+          {display}
         </div>
       </div>
       </>

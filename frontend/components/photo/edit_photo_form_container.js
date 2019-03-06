@@ -2,44 +2,66 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPost, updatePost } from '../../actions/photo';
 
-const mSP = (state) => {
-  return ({
-    photo: this.state.photo
-  })
-}
-
 const mDP = (dispatch) => {
   return ({
-
+    fetchPost: (photo) => dispatch(fetchPost(photo)),
+    action: (photo) => dispatch(updatePost(photo))    
   })
 }
 
 export class EditPhotoForm extends React.Component {
-  // componentDidMount() {
-  //   this.props.fetchPost(this.props.match.)
-  // }
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      id: this.props.photo.id,
+      title: this.props.photo.title,
+      description: this.props.photo.description
+    }
+
+    this.update = this.update.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  update(field) {
+    return (e) => {
+      this.setState({
+        [field]: e.currentTarget.value
+      })
+    }
+  }
+  
+ handleSubmit(e) {
+   e.preventDefault();
+   this.props.updatePhoto(this.state);
+ }
+
   render() {
+    console.log(this.props)
     return (
-      <form>
+      <form className="photoEdit-form" onSubmit={this.handleSubmit}>
          <input
-            type = "text"
-            placeholder = "Add a title"
+            className="photoEdit-title"
+            type="text"
+            placeholder = "Add title"
+            value={this.state.title}
+             onChange = {this.update("title")}
           />
-          {/* <input
-         type = "text"
-         value = {
-           this.state.description
-         }
-         onChange = {
-           this.update("description")
-         }
-         placeholder = "Add a description" / */}
+          <br />
+         <textarea
+            className="photoEdit-description"
+            type="text"
+            placeholder = "Add description"
+            value={this.state.description}
+            onChange = {this.update("description")}
+          />
+          <br />
+
+          <button className="photoEdit-update">Update</button>
 
       </form>
     )
   }
 }
 
-
-
-export default connect(mSP, mDP)(EditPhotoForm)
+export default connect(null, mDP)(EditPhotoForm)
