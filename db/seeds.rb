@@ -26,14 +26,14 @@ ActiveRecord::Base.transaction do
     photo1 = Photo.create!(title: "Akihabara", description: "Akihabara Shop Owner", uploader_id: user1.id)
     photo2 = Photo.create!(title: "The Shinden", description: "The Shinden is a shrine to the divine spirits", uploader_id: user1.id)
     photo3 = Photo.create!(title: "The Island", description: "A random island I found when I was wandering China", uploader_id: user1.id)
-    photo4 = Photo.create!(title: "The Bund", description: "The Bund is a famous strip in Shanghai", uploader_id: user1.id)
-    photo5 = Photo.create!(title: "Falcon 9", description: "The SpaceX Falcon 9 launch", uploader_id: user1.id)
+    photo4 = Photo.create!(title: "Falcon 9", description: "The SpaceX Falcon 9 launch", uploader_id: user1.id)
+    photo5 = Photo.create!(title: "The Bund", description: "The Bund is a famous strip in Shanghai", uploader_id: user1.id)
 
     photo1.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/akihabaraShop.jpg"), filename: "akihabaraShop.jpg")
     photo2.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/shinden.jpg"), filename: "theShinden.jpg")
     photo3.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/island.jpg"), filename: "island.jpg")
-    photo4.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/theBund.jpg"), filename: "theBund.jpg")
-    photo5.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/spaceX.jpg"), filename: "falcon9.jpg")
+    photo4.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/spaceX.jpg"), filename: "falcon9.jpg")
+    photo5.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/theBund.jpg"), filename: "theBund.jpg")
 
     # Grady id=2
     photo6 = Photo.create!(title: "Autumn Road", description: "A windy road during autumn", uploader_id: user2.id)
@@ -63,13 +63,13 @@ ActiveRecord::Base.transaction do
     
     # Joseph id=4
     photo16 = Photo.create!(title: "Bay Bridge", description: "The bay bridge through a fence", uploader_id: user4.id)
-    photo17 = Photo.create!(title: "Hong Kong", description: "A colorful area in Hong Kong", uploader_id: user4.id)
+    photo17 = Photo.create!(title: "Tidal Pool", description: "I took a picture of a tidal pool in California", uploader_id: user4.id)
     photo18 = Photo.create!(title: "Chicago Skyline", description: "A picture of the Chicago Skyline", uploader_id: user4.id)
     photo19 = Photo.create!(title: "Lake", description: "I took a picture of my friend standing by a lake", uploader_id: user4.id)
-    photo20 = Photo.create!(title: "Sydney, Australia", description: "I love taking pictures of city skylines", uploader_id: user7.id)
+    photo20 = Photo.create!(title: "Sydney, Australia", description: "I love taking pictures of city skylines", uploader_id: user4.id)
 
     photo16.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/bayBridge.jpg"), filename: "bayBridge.jpg")    
-    photo17.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/colorfulHK.png"), filename: "colorfulHK.png")    
+    photo17.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/tidalPool.jpg"), filename: "tidalPool.jpg")    
     photo18.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/chicagoSkyline.jpg"), filename: "chicagoSkyline.jpg")    
     photo19.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/mountainLake.jpg"), filename: "mountainLake.jpg")    
     photo20.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/sydneyAus.jpg"), filename: "sydneyAustralia.jpg")    
@@ -123,6 +123,4 @@ ActiveRecord::Base.transaction do
     photo37.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/planeNYC.jpg"), filename: "planeNYC.jpg") 
     photo38.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/japaneseWaterfall.jpg"), filename: "japaneseWaterfall.jpg") 
     photo39.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/veniceRiver.jpg"), filename: "veniceRiver.jpg") 
-    
-
 end
