@@ -11,6 +11,13 @@ export default(props) => {
         {error}
       </li>
     ))
+  } else if (props.photoErrors) {
+    display = props.photoErrors.map( (error) => 
+    (
+      <li>
+        {error}
+      </li>
+    ))
   }
 
   return (
