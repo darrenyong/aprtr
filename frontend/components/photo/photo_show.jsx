@@ -34,7 +34,6 @@ class PhotoShow extends React.Component {
   }
   
   render() {
-    console.log(this.props)
     let photo, title, description, display, deleteBtn;
     if (this.props.photo) {
       photo = this.props.photo.photoUrl;

@@ -9,6 +9,7 @@ import LoginContainer from "./session/login_container";
 import NavBarContainer from "./navbar/navbar_container";
 import FooterContainer from "./footer/footer"
 import PhotoIndexContainer from "./photo/photo_index_container"
+import UserPhotoIndexContainer from "./photo/user_photo_index_container"
 import PhotoShowContainer from "./photo/photo_show_container"
 import PhotoUploadContainer from "./photo/create_photo_form_container"
 
@@ -30,6 +31,9 @@ export default class App extends React.Component {
           {/* Sign Up & Log In */}
           <AuthRoute path="/signup" component={SignupContainer} />
           <AuthRoute path="/login" component={LoginContainer} />
+
+          {/* Users */}
+          <Route exact path="/users/:id/photos" component={UserPhotoIndexContainer} />
 
           {/* Photos */}
           <ProtectedRoute exact path="/photos/upload" component={PhotoUploadContainer} />

@@ -1,18 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
 import PhotoIndex from "./photo_index";
-import { fetchAllPhotos } from "../../actions/photo"
+import { fetchAllUserPhotos } from "../../actions/photo"
 
-const mSP = (state) => {
+const mSP = (state, ownProps) => {
+  console.log(ownProps)
   return ({
-    containerType: "photoIndex",
+    containerType: "userIndex",
+    userId: ownProps.match.params.id,
     photos: Object.values(state.entities.photos)
   })
 }
 
 const mDP = (dispatch) => {
   return ({
-    action: () => dispatch(fetchAllPhotos())
+    action: (id) => dispatch(fetchAllUserPhotos(id))
   })
 }
 

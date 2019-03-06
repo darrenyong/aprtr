@@ -1,4 +1,4 @@
-import { RECEIVE_PHOTO_ERRORS, RECEIVE_PHOTO, REMOVE_PHOTO_ERRORS} from '../actions/session';
+import { RECEIVE_PHOTO_ERRORS, RECEIVE_PHOTO, REMOVE_PHOTO_ERRORS} from '../actions/photo';
 
 export default (state = [], action) => {
   Object.freeze(state);

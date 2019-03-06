@@ -10,14 +10,22 @@ class PhotoIndex extends React.Component {
 
   // componentWillUnmount() {
   //   this.position = window.pageYOffset
-  //   console.log(this.position);
   // }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      this.props.action(this.props.match.params.id);
+    }
+  }
+
   componentDidMount() {
-    // debugger
-    // console.log(window.pageYOffset);
     // window.scrollTo(0, window.pageYOffset);
-    this.props.fetchAllPhotos();
+    // console.log(this.props)
+    if (this.props.containerType === "photoIndex") {
+      this.props.action()
+    } else if (this.props.containerType === "userIndex") {
+      this.props.action(this.props.userId)
+    }
   }
 
   render() {

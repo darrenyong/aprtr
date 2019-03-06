@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO } from "../actions/photo"
+import { RECEIVE_ALL_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO, RECEIVE_USER_PHOTOS } from "../actions/photo"
 import merge from 'lodash/merge';
 
 export default (oldState = {}, action) => {
@@ -7,6 +7,8 @@ export default (oldState = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_ALL_PHOTOS:
+      return action.photos;
+    case RECEIVE_USER_PHOTOS:
       return action.photos;
     case RECEIVE_PHOTO:
       newState = merge({}, oldState, { [action.photo.id]: action.photo });
