@@ -31,7 +31,8 @@ export default class App extends React.Component {
 
           {/* Photos */}
           <ProtectedRoute exact path="/photos/upload" component={PhotoUploadContainer} />
-          <ProtectedRoute exact path="/photos/:id" component={PhotoShowContainer} />
+          <Route exact path="/photos/:id" component={PhotoShowContainer} />
+          <Route exact path="/photos/" component={PhotoIndexContainer} />
 
           {/* Splash Page */}
           <SplashRoute exact path="/" loggedInComponent={PhotoIndexContainer} loggedOutComponent={SplashContainer}/>
