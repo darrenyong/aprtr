@@ -8,8 +8,10 @@
   justify-content: center;
   background: #f3f5f6;
   z-index: -1;
-  margin-top: 65px;
-  margin-bottom: 65px;
+  margin-top: 63px;
+  padding-top: 2px;
+  margin-bottom: 52px;
+  padding-bottom: 53px;
 }
 
 .photoIndex-container {
@@ -64,12 +66,13 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
+  margin-top: 45px;
   width: 100%;
 }
 
 .imageShow-photo {
   max-height: 700px;
-  padding-top: 50px;
 }
 
 .imageShow-delete {
@@ -87,8 +90,37 @@
 
 }
 
+// Photo Details
 .image-details-parent {
   display: flex;
-  justify-content: center;
+  justify-content: center;  
+  padding-bottom: 150px;
+  background: #f3f5f6;
 }
 
+.image-details-container {
+  padding-top: 20px;
+  // Change width to 1000px when you have build out more features on the show page
+  width: inherit;
+
+  h1 {
+    font-family: Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0px 10px 15px 10px;
+  }
+
+  h2 {
+    font-family: Helvetica;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0px 25px 0px 20px;
+  }
+
+}
+
+.image-details-child {
+  text-align: center;
+  height: 75px;
+  border-bottom: 1px solid #cfd6d9;
+}
