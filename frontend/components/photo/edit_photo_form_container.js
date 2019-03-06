@@ -19,30 +19,12 @@ export class EditPhotoForm extends React.Component {
   //   this.props.fetchPost(this.props.match.)
   // }
   render() {
-    console.log()
     return (
-      <>
-      <h1> TEST </h1>
       <form>
          <input
             type = "text"
             placeholder = "Add a title"
           />
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
           {/* <input
          type = "text"
          value = {
@@ -53,9 +35,7 @@ export class EditPhotoForm extends React.Component {
          }
          placeholder = "Add a description" / */}
 
-
       </form>
-      </>
     )
   }
 }

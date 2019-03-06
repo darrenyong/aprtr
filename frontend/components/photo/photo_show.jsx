@@ -4,8 +4,13 @@ import { EditPhotoForm } from '../photo/edit_photo_form_container'
 class PhotoShow extends React.Component {
   constructor(props) {
     super(props)
+   
+    this.state = {
+      captionEdit: false
+    }
 
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -15,6 +20,7 @@ class PhotoShow extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     let photoId = this.props.photoId
     this.props.fetchPhoto(photoId)
   }
@@ -22,17 +28,34 @@ class PhotoShow extends React.Component {
   handleDelete(e) {
     this.props.deletePhoto(this.props.photo.id).then((res) => this.props.history.push("/"))
   }
+
+  handleEdit(e) {
+    console.log(this.state.captionEdit);
+    this.setState({
+      captionEdit: true
+    })
+  }
   
   render() {
     console.log(this.props)
-    let photo;
-    let title;
-    let description;
+    let photo, title, description, display;
     if (this.props.photo) {
       photo = this.props.photo.photoUrl
       title = this.props.photo.title
       description = this.props.photo.description
     }
+
+    if (this.state.captionEdit) {
+      display = (
+        <EditPhotoForm />
+      ) } else {
+        display = (
+        <>
+        <h1>{title}</h1>
+        <h2>{description}</h2>
+        </>
+        );
+      }
 
     return (
       <>
@@ -51,9 +74,9 @@ class PhotoShow extends React.Component {
 
       <div className="image-details-parent">
         <div className="image-details-container">
-          <h1>{title}</h1>
-          <h2>{description}</h2>
-          <EditPhotoForm />
+          <div onClick={this.handleEdit} className="image-details-child">
+            {display}
+          </div>
         </div>
       </div>
       </>
