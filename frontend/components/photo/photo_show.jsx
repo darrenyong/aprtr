@@ -34,6 +34,7 @@ class PhotoShow extends React.Component {
   }
   
   render() {
+    console.log(this.props)
     let photo, title, description, display, deleteBtn;
     if (this.props.photo) {
       photo = this.props.photo.photoUrl;
@@ -62,16 +63,16 @@ class PhotoShow extends React.Component {
         );
       }
 
-    // if (this.props.currentUser === this.props.photo.uploaderId) {
+    if (this.props.isUploader === true) {
       deleteBtn = (
         <i
           className="fas fa-trash-alt"
           onClick={this.handleDelete}
         ></i>
       )
-    // } else {
-    //   deleteBtn = null;
-    // }
+    } else {
+      deleteBtn = null;
+    }
 
     return (
       <>

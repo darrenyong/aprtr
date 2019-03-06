@@ -4,9 +4,11 @@ import { fetchPhoto, deletePhoto, updatePhoto } from '../../actions/photo';
 
 const mSP = (state, ownProps) => {
   let photoId = ownProps.match.params.id
+  let photo = state.entities.photos[photoId]
   return ({
     photoId: photoId,
-    photo: state.entities.photos[photoId]
+    isUploader: photo ? (state.session === state.entities.photos[photoId].uploaderId) : false,
+    photo: photo 
   })
 }
 
