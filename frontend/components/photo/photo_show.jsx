@@ -34,11 +34,11 @@ class PhotoShow extends React.Component {
   }
   
   render() {
-    let photo, title, description, display;
+    let photo, title, description, display, deleteBtn;
     if (this.props.photo) {
-      photo = this.props.photo.photoUrl
-      title = this.props.photo.title
-      description = this.props.photo.description
+      photo = this.props.photo.photoUrl;
+      title = this.props.photo.title;
+      description = this.props.photo.description;
     }
 
     if (this.state.photoEdit) {
@@ -51,13 +51,27 @@ class PhotoShow extends React.Component {
       ) } else {
         display = (
         <>
-          <div onClick={this.toggleEdit} className="photoDetails-child">
-            <h1>{title}</h1>
-            <h2>{description}</h2>
+          <div className="photoDetails-container">
+            <i className="far fa-edit"></i>
+            <div onClick={this.toggleEdit} className="photoDetails-child">
+              <h1>{title}</h1>
+              <h2>{description}</h2>
+            </div>
           </div>
         </>
         );
       }
+
+    // if (this.props.currentUser === this.props.photo.uploaderId) {
+      deleteBtn = (
+        <i
+          className="fas fa-trash-alt"
+          onClick={this.handleDelete}
+        ></i>
+      )
+    // } else {
+    //   deleteBtn = null;
+    // }
 
     return (
       <>
@@ -66,18 +80,13 @@ class PhotoShow extends React.Component {
         <div className="photoShow-container">
           <img className="photoShow-photo" src={`${photo}`} />
           <div className="photoShow-delete">
-              <i 
-                className="fas fa-trash-alt"
-                onClick={this.handleDelete}
-              ></i>
+            {deleteBtn}
           </div>
         </div>
       </div>
 
       <div className="photoDetails-parent">
-        <div className="photoDetails-container">
           {display}
-        </div>
       </div>
       </>
     );
