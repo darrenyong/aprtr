@@ -4,11 +4,14 @@ import PhotoIndex from "./photo_index";
 import { fetchAllUserPhotos } from "../../actions/photo"
 
 const mSP = (state, ownProps) => {
-  console.log(ownProps)
+  let photos = Object.values(state.entities.photos)
+  let userId = ownProps.match.params.id
   return ({
     containerType: "userIndex",
-    userId: ownProps.match.params.id,
-    photos: Object.values(state.entities.photos)
+    userId: userId,
+    photos: photos,
+    photoCount: photos.length,
+    user: state.entities.users[userId]
   })
 }
 
