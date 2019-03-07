@@ -84,19 +84,15 @@ ActiveRecord::Base.transaction do
     photo41.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/wanakaNZ.jpg"), filename: "wanakaNZ.jpg")    
     
     # Brandon id=5
-    photo21 = Photo.create!(title: "Lexus IS", description: "My friend Joe's Lexus IS", uploader_id: user5.id)
     photo22 = Photo.create!(title: "Racecar", description: "A picture of a racecar in the rain", uploader_id: user5.id)
     photo23 = Photo.create!(title: "Lighthouse", description: "", uploader_id: user5.id)
     photo24 = Photo.create!(title: "Stop once in a while", description: "I was driving during golden hour and thought this would be a nice picture", uploader_id: user5.id)
     photo42 = Photo.create!(title: "Lone man", description: "I took a picture of a man crossing the street in Tokyo", uploader_id: user5.id)
-    photo47 = Photo.create!(title: "Lexus IS", description: "My friend Darren's Lexus IS", uploader_id: user5.id)
-
-    photo21.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/joeLam.jpg"), filename: "joeIS.jpg")
+    
     photo22.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/raceRain.jpg"), filename: "raceRain.jpg")
     photo23.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/lighthouse.jpg"), filename: "lighthouse.jpg")
     photo24.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/stopSign.jpg"), filename: "stopSign.jpg")
     photo42.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/tokyoMan.jpg"), filename: "tokyoMan.jpg")
-    photo47.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/myIS.jpg"), filename: "darrenIS.jpg")
     
     # Kathryn id=6
     photo25 = Photo.create!(title: "Boat on a Lake", description: "A boat in the middle of a lake", uploader_id: user6.id)
@@ -127,7 +123,7 @@ ActiveRecord::Base.transaction do
     photo33.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/statueOfLiberty.jpg"), filename: "statueOfLiberty.jpg")    
     photo34.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/stoneBarrier.jpg"), filename: "stoneBarrier.jpg")    
     photo44.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/manInMask.jpg"), filename: "manInMask.jpg")    
-
+    
     # Ashley id=8
     photo35 = Photo.create!(title: "New York City", description: "A plane departing New York City", uploader_id: user8.id)
     photo36 = Photo.create!(title: "Waterfall", description: "I took a picture of a waterfall in Japan", uploader_id: user8.id)
@@ -135,11 +131,20 @@ ActiveRecord::Base.transaction do
     photo38 = Photo.create!(title: "The Great Wall", description: "I was walking the Great Wall when it was cloudy", uploader_id: user8.id)
     photo39 = Photo.create!(title: "River in Venice", description: "", uploader_id: user8.id)
     photo45 = Photo.create!(title: "Bagan", description: "A panorama I took in Bagan, Myanmar", uploader_id: user8.id)
-
+    
     photo35.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/planeNYC.jpg"), filename: "planeNYC.jpg") 
     photo36.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/japaneseWaterfall.jpg"), filename: "japaneseWaterfall.jpg") 
     photo37.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/goldenGate.jpg"), filename: "goldenGateSunset.jpg") 
     photo38.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/greatWall.jpg"), filename: "greatWall.jpg") 
     photo39.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/veniceRiver.jpg"), filename: "veniceRiver.jpg") 
     photo45.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/baganMyanmar.jpg"), filename: "baganMyanmar.jpg") 
-end
+    
+    # Easter eggs
+    photo21 = Photo.create!(title: "Lexus IS", description: "My friend Joe's Lexus IS", uploader_id: user5.id)
+    photo47 = Photo.create!(title: "Lexus IS", description: "My friend Darren's Lexus IS", uploader_id: user5.id)
+    photo49 = Photo.create!(title: "Mochi", description: "This is my dog Mochi. He is a Shiba Inu and was ~4 months when we took this photo.", uploader_id: user1.id)
+    photo21.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/joeLam.jpg"), filename: "joeIS.jpg")
+    photo47.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/myIS.jpg"), filename: "darrenIS.jpg")
+    photo49.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/mochi.jpg"), filename: "mochi.jpg")
+    
+  end
