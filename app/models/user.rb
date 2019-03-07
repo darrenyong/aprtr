@@ -24,6 +24,11 @@ class User < ApplicationRecord
     foreign_key: :uploader_id,
     class_name: 'Photo'
 
+  has_many :albums,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: 'Album'
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     user && user.is_password?(password) ? user : nil
