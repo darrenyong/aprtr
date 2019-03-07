@@ -18,6 +18,7 @@ ActiveRecord::Base.transaction do
   user6 = User.create!(username: "katchu", email: "kathryn@appacademy.io", password: "password")
   user7 = User.create!(username: "brianchan", email: "brian@appacademy.io", password: "password")
   user8 = User.create!(username: "ashleyyip", email: "ashley@appacademy.io", password: "password")
+  user9 = User.create!(username: "demo", email: "demo@appacademy.io", password: "password")
 
   # Photos
   Photo.destroy_all

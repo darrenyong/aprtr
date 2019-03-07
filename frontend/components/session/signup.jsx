@@ -39,7 +39,7 @@ class Signup extends React.Component {
   loginDemoUser(e) {
     e.preventDefault();
     const demoUser = {
-      username: "darrenyong",
+      username: "demo",
       password: "password"
     }
     this.props.createSession(demoUser)
