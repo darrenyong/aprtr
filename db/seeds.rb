@@ -12,7 +12,7 @@ ActiveRecord::Base.transaction do
   User.destroy_all
   user1 = User.create!(username: "darrenyong", email: "darren@appacademy.io", password: "password")
   user2 = User.create!(username: "gradyzhu", email: "grady@appacademy.io", password: "password")
-  user3 = User.create!(username: "deanlacap", email: "deam@appacademy.io", password: "password")
+  user3 = User.create!(username: "deanlacap", email: "dean@appacademy.io", password: "password")
   user4 = User.create!(username: "josephpark", email: "joseph@appacademy.io", password: "password")
   user5 = User.create!(username: "brandonkwan", email: "brandon@appacademy.io", password: "password")
   user6 = User.create!(username: "katchu", email: "kathryn@appacademy.io", password: "password")

@@ -1,0 +1,33 @@
+.userIndex-header {
+  padding-top: 63px;
+  background-color: #6c757d;
+  background-image: url("https://s3-us-west-1.amazonaws.com/aprtr-seed/gplay.png");
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.userIndex-header h1 {
+  font-size: 30px;
+  font-family: Helvetica;
+  font-weight: 300;
+  color: #fff;
+  padding: 0px 0px 15px 10%;
+}
+
+.photoIndex-container p {
+  font-size: 30px;
+  font-family: Helvetica;
+  font-weight: 300;
+  padding: 30px 0px 10px 1px;
+}
+
+.userIndex-header h3 {
+  font-size: 20px;
+  font-family: Helvetica;
+  font-weight: 300;
+  color: #fff;
+  padding: 0px 300px 15px 0px;
+}

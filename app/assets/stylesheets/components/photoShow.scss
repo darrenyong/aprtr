@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   background: #202123;
-  height: 80vh;
+  height: 700px;
   flex-wrap: wrap;
   padding-top: 63px;
 }
@@ -49,7 +49,9 @@
 }
 
 .photoShow-photo {
-  max-height: 70vh;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 600px;
 }
 
 .photoShow-delete {
@@ -147,4 +149,22 @@
   background: #3ca745;
   color: white;
   border: none;
+}
+
+.photoShow-uploaderContainer {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  font-family: Helvetica;
+  font-size: 15px;
+}
+
+.photoShow-uploader:active, .photoShow-uploader:visited, .photoShow-uploader {
+  text-decoration: none;
+  color: white;
+}
+
+.photoShow-uploader:hover {
+  text-decoration: underline;
 }
