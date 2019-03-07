@@ -77,6 +77,10 @@ class PhotoShow extends React.Component {
       <>
       <div className="photoShow-parent">
         {/* Need a back to explore page here */}
+        <div className="photoShow-explore" onClick={() => this.props.history.push("/")}> 
+          <span>&#8592;</span>
+          <p>Back to Explore</p>
+        </div>
         <div className="photoShow-container">
           <img className="photoShow-photo" src={`${photo}`} />
           <div className="photoShow-delete">
