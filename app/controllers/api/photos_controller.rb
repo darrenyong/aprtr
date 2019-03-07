@@ -3,11 +3,12 @@ class Api::PhotosController < ApplicationController
   def index 
     if params[:user_id]
       @photos = Photo.all.select{|photo| photo.uploader_id.to_s == params[:user_id]}
+      @user = User.find_by(id: params[:user_id])
+      render :user_index
     else
       @photos = Photo.all
+      render :index
     end
-    
-    render :index
   end
   
   # Show
