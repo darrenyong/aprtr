@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default(props) => {
   let display;
 
-  if (props.currentUserId && !props.isUploadPath) {
+  if (props.currentUserId && props.isUploadPath === false) {
     display = (
     <header className="navbar-logged-in">
       <Link className="navbar-logo" to="/">aprtr</Link>
@@ -21,12 +21,12 @@ export default(props) => {
       {display}
     </header>
     )
-  } else if (props.currentUserId && props.isUploadPath) {
+  } else if (props.currentUserId && props.isUploadPath === true) {
     display = (
     <header className="navbar-logged-in">
       <Link className="navbar-logo" to="/">aprtr</Link>
-      <div className="navbar-logged-in-btn">
-        <button className="navbar-logout" onClick={props.logout}>Log Out</button>
+      <div className="navbarUpload-logged-in-btn">
+        <button className="navbarUpload-logout" onClick={props.logout}>Log Out</button>
       </div>
     </header>
     ) 

@@ -58,18 +58,40 @@
 .fa-cloud-upload-alt, .fa-cloud-upload-alt:visited{
   color: white;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 30px;
+  padding-top: 2px;
 }
 
 .fa-cloud-upload-alt:hover {
   color: #bcbcbd;
 }
 
-.navbar-logged-in-btn {
+.navbarUpload-logged-in-btn, .navbar-logged-in-btn {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 125px;
+  width: 165px;
   height: 50px;
   margin-right: 40px;
+}
+
+.navbarUpload-logout, .navbar-logout {
+  background: #dc3545;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  padding: 7px 22px;
+  font-family: Helvetica;
+}
+.navbarUpload-logout:hover, .navbar-logout:hover {
+  background: #d92638;
+  cursor: pointer;
+}
+
+.navbar-logged-in-btn {
+  justify-content: space-between;
+}
+
+.navbarUpload-logged-in-btn {
+  justify-content: flex-end;
 }
