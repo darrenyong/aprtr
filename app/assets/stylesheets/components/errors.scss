@@ -13,19 +13,22 @@
 }
 
 .error-list-container {
-  margin-top: 20px;
+  margin-top: 75px;
 }
 
 .error-list {
-  background: white;
-  color: #dc282a;
-  font-family: "Helvetica";
-  font-size: 18px;
+  background: #fcf3cd;
+  color: #856404;
+  font-family: Verdana;
+  font-size: 15px;
   border-radius: 4px;
   padding: 8px;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, .5);
+  font-weight: 400;
+  border: 1px solid #fbedb7;
 }
 
 .error-list:empty {
+  border: none;
   padding: 0px;
 }
