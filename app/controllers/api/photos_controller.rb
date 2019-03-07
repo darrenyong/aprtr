@@ -14,6 +14,7 @@ class Api::PhotosController < ApplicationController
   # Show
   def show
     @photo = Photo.find_by(id: params[:id])
+    @user = User.find_by(id: @photo.uploader_id)
 
     if @photo
       render :show

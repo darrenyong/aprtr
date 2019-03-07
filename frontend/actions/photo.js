@@ -19,9 +19,10 @@ const receiveUserPhotos = ({photos, users}) => ({
   users: users
 })
 
-const receivePhoto = (photo) => ({
+const receivePhoto = ({ photo, user }) => ({
   type: RECEIVE_PHOTO,
-  photo: photo
+  photo: photo,
+  user: user
 })
 
 const removePhoto = (id) => ({
