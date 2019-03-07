@@ -6,6 +6,7 @@
 .photoIndex-parent {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   background: #f3f5f6;
   z-index: -1;
   margin-bottom: 52px;
@@ -14,11 +15,11 @@
 
 .photoIndex-container {
   width: 160vh;
-  margin-top: 63px;
 }
 
 .photoIndex-container h1 {
   font-size: 24px;
+  margin-top: 63px;
   padding: 20px 0px 10px 1px;
   font-family: Helvetica;
   font-weight: 300;
@@ -51,3 +52,35 @@
 //   background: rgba(0, 0, 0, 0.2);
 // }
 
+.userIndex-header {
+  padding-top: 63px;
+  background: gray;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.userIndex-header h1 {
+  font-size: 30px;
+  font-family: Helvetica;
+  font-weight: 300;
+  color: #fff;
+  padding: 0px 0px 15px 10%;
+}
+
+.photoIndex-container p {
+  font-size: 30px;
+  font-family: Helvetica;
+  font-weight: 300;
+  padding: 20px 0px;
+}
+
+.userIndex-header h3 {
+  font-size: 20px;
+  font-family: Helvetica;
+  font-weight: 300;
+  color: #fff;
+  padding: 0px 300px 15px 0px;
+}
