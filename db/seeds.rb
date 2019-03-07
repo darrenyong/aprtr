@@ -112,15 +112,15 @@ ActiveRecord::Base.transaction do
     photo34.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/stoneBarrier.jpg"), filename: "stoneBarrier.jpg")    
 
     # Ashley id=8
-    photo35 = Photo.create!(title: "Golden Gate Bridge", description: "The sunset on the Golden Gate Bridge", uploader_id: user8.id)
-    photo36 = Photo.create!(title: "The Great Wall", description: "I was walking the Great Wall when it was cloudy", uploader_id: user8.id)
-    photo37 = Photo.create!(title: "New York City", description: "A plane departing New York City", uploader_id: user8.id)
-    photo38 = Photo.create!(title: "Waterfall", description: "I took a picture of a waterfall in Japan", uploader_id: user8.id)
+    photo35 = Photo.create!(title: "New York City", description: "A plane departing New York City", uploader_id: user8.id)
+    photo36 = Photo.create!(title: "Waterfall", description: "I took a picture of a waterfall in Japan", uploader_id: user8.id)
+    photo37 = Photo.create!(title: "Golden Gate Bridge", description: "The sunset on the Golden Gate Bridge", uploader_id: user8.id)
+    photo38 = Photo.create!(title: "The Great Wall", description: "I was walking the Great Wall when it was cloudy", uploader_id: user8.id)
     photo39 = Photo.create!(title: "River in Venice", description: "", uploader_id: user8.id)
 
-    photo35.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/goldenGate.jpg"), filename: "goldenGateSunset.jpg") 
-    photo36.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/greatWall.jpg"), filename: "greatWall.jpg") 
-    photo37.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/planeNYC.jpg"), filename: "planeNYC.jpg") 
-    photo38.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/japaneseWaterfall.jpg"), filename: "japaneseWaterfall.jpg") 
+    photo35.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/planeNYC.jpg"), filename: "planeNYC.jpg") 
+    photo36.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/japaneseWaterfall.jpg"), filename: "japaneseWaterfall.jpg") 
+    photo37.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/goldenGate.jpg"), filename: "goldenGateSunset.jpg") 
+    photo38.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/greatWall.jpg"), filename: "greatWall.jpg") 
     photo39.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/veniceRiver.jpg"), filename: "veniceRiver.jpg") 
 end
