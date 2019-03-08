@@ -81,10 +81,10 @@ description <strong>only if they are the current user</strong>.
 
 The edit form only renders if the current user is the same as the uploader. Rendering
 the form on click was handled through local state as well. Clicking the section would
-call a function that modifies a local state variable to render the child component. 
-A callback to this function is passed down as a prop to the child component which 
-would be called when the user submits the form. Upon submission, the title and
-description would also be updated.
+call a function that toggles a local state variable and renders the child component. 
+A callback to this function is passed down to the child component which would be
+called when the user submits the form. Upon submission, the title and description 
+would also be updated.
 
 ```js
 // Function to toggle local state variable
@@ -106,8 +106,15 @@ handleSubmit(e) {
   this.props.toggleEdit(e);
 }
 ```
-
 ***
 
+### User Profile
+![User Profile](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_profile.png)
+
+Clicking on the uploader while in the photo show page will direct a user to the user profile.
+The user profile page shows all the photos that a user has uploaded. Tabs under
+the header will eventually allow a user to view all the user's photos or albums. 
+
+
 ### User Authentication
-![User Authentication](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_userAuth.png)
+![User Authentication](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_auth.png)
