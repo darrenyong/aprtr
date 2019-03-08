@@ -13,7 +13,7 @@ Aprtr (Aperture) is an image hosting service inspired by Flickr. It is built usi
 ### Current Features
 * [Uploading photos](https://github.com/darrenyong/Aprtr#uploading)
 * [Viewing & Editing photos](https://github.com/darrenyong/Aprtr#viewing--editing)
-* Viewing user profiles
+* [Viewing user profiles](https://github.com/darrenyong/Aprtr#user-profile)
 * [User authentication](https://github.com/darrenyong/Aprtr#user-authentication)
 
 ### Planned Features
@@ -57,7 +57,8 @@ if (uploadPage === 0) {
 ```
 #### Upload Page 2
 ![Upload Page 2](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_upload2.png)
-***
+*** 
+<br>
 
 ### Viewing & Editing
 #### Photo Explore
@@ -106,7 +107,8 @@ handleSubmit(e) {
   this.props.toggleEdit(e);
 }
 ```
-***
+*** 
+<br>
 
 ### User Profile
 ![User Profile](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_profile.png)
@@ -114,7 +116,13 @@ handleSubmit(e) {
 Clicking on the uploader while in the photo show page will direct a user to the user profile.
 The user profile page shows all the photos that a user has uploaded. Tabs under
 the header will eventually allow a user to view all the user's photos or albums. 
-
+*** 
+<br>
 
 ### User Authentication
 ![User Authentication](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_auth.png)
+
+User Authentication was made possible through the [BCrypt](https://github.com/codahale/bcrypt-ruby)
+gem and Ruby's built in [SecureRandom](https://ruby-doc.org/stdlib-2.5.1/libdoc/securerandom/rdoc/SecureRandom.html) 
+module. Users must be logged in to upload photos, however, they are able to view 
+specific photos and user profiles without being logged in.
