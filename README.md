@@ -11,9 +11,10 @@ Aprtr (Aperture) is an image hosting service inspired by Flickr. It is built usi
 
 # Features 
 ### Current Features
-* Uploading, editing and viewing photos
+* [Uploading photos](https://github.com/darrenyong/Aprtr#uploading)
+* [Viewing & Editing photos](https://github.com/darrenyong/Aprtr#viewing--editing)
 * Viewing user profiles
-* User authentication
+* [User authentication](https://github.com/darrenyong/Aprtr#user-authentication)
 
 ### Planned Features
 * Creating, editing and viewing albums
@@ -33,10 +34,10 @@ the navbar will eventually allow users to view different pages of the site.
 #### Upload Page 1
 ![Upload Page 1](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_upload1.png)
 
-For the upload feature, there are two different components. One that prompts the
+For the upload feature, there are two different pages. One that prompts the
 user to choose a file and another for the user to enter information such as title
 and description. This was achieved through local state. Choosing a file would call 
-a function to modify a variable in local state and render the following page.
+a function to modify a variable in local state and render the next page.
 
 ```js
 // Function to modify local state upon choosing file
@@ -64,14 +65,47 @@ if (uploadPage === 0) {
 ```
 #### Upload Page 2
 ![Upload Page 2](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_upload2.png)
-
+***
 
 ### Viewing & Editing
-![Photo Show](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_show.png)
-![Photo Edit](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_edit.gif)
-<!-- the child component. A 
-callback to this function is passed down as a prop which would be called when the 
-user submits the form. -->
+#### Photo Show
+![Photo Show](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_show.png) <br>
+Clicking on a specific photo in the Explore page brings the user to a photo show page.
+On this page, information such as uploader, title and description is displayed about
+each photo. Additionally users can choose to delete the photo or edit the title and
+description <strong>only if they are the current user</strong>.
+
+#### Photo Edit
+![Photo Edit](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_edit.gif) <br>
+The edit form only renders if the current user is the same as the uploader. Rendering
+the form on click was handled through local state as well. Clicking the section would
+call a function to modify a local state variable to render the child component. 
+A callback to this function is passed down as a prop to the child component which 
+would be called when the user submits the form. Upon submission, the title and
+description would also be updated.
+
+```js
+// Function to toggle local state variable
+toggleEdit(e) {
+  this.setState((oldState) => ({photoEdit: !oldState.photoEdit}))
+}
+
+// Function being passed to child Component as a prop
+<EditPhotoForm 
+  photo={this.props.photo} 
+  updatePhoto={this.props.updatePhoto}
+  toggleEdit={this.toggleEdit} 
+/>
+
+// Edit form on submit callback
+handleSubmit(e) {
+  e.preventDefault();
+  this.props.updatePhoto(this.state);
+  this.props.toggleEdit(e);
+}
+```
+
+***
 
 ### User Authentication
 ![User Authentication](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_userAuth.png)
