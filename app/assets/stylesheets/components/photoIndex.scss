@@ -19,17 +19,54 @@
 
 .photoIndex-container h1 {
   font-size: 26px;
-  margin-top: 63px;
   padding: 30px 0px 10px 1px;
   font-family: Helvetica;
   font-weight: 300;
 }
+
+.photoIndex-bar, .userIndex-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  background: white;
+  height: 50px;
+  font-family: Helvetica;
+}
+
+.photoIndex-bar span, .userIndex-bar span {
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  height: 100%;
+}
+
+.photoIndex-bar {
+  margin-top: 63px;
+}
+
+.photoIndex-bar span:hover, .userIndex-bar span:hover {
+  box-shadow: inset 0px -3px 0px 0px #44bb4e;
+  // border-bottom: 5px solid #128fdc;
+}
+
+// .userIndex-bar {
+//   display: flex;
+//   justify-content: center;
+//   width: 100%;
+//   flex-wrap: wrap;
+//   background: white;
+// }
 
 .photoIndexItem {
   height: 300px;
   width: auto;
   margin: 1px 2.5px;
 }
+
+
 
 // .photoIndexItem-overlay {
 //   position: absolute;
