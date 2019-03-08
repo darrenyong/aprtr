@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 class Splash extends React.Component {
   render() {
+    document.title = "Home | Aprtr"
     return(
       <>
       <div className="splash-image"></div>

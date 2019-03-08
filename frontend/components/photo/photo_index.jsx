@@ -40,37 +40,43 @@ class PhotoIndex extends React.Component {
     }
 
     if (this.props.containerType === "photoIndex") {
+      document.title = "Explore | Aprtr"
       display = (
         <div className="photoIndex-parent">
+          <div className="photoIndex-bar">
+            <span className="photoIndex-explore">Explore</span>
+            <span className="photoIndex-trending">Trending</span>
+          </div>
           <div className="photoIndex-container">
             <h1>Explore</h1>
-            <div>
-              <div className="photoIndex">
-                <ul>
-                  {photos}
-                </ul>
-              </div>
+            <div className="photoIndex">
+              <ul>
+                {photos}
+              </ul>
             </div>
           </div>
         </div>
       )
     } else {
+      document.title = `${username} | Aprtr`
       display = (
         <div className="photoIndex-parent">
           <div className="userIndex-header">
             <h1>{username}</h1>
             <h3>{this.props.photoCount} Photos</h3>
           </div>
-          <div className="photoIndex-container">
+            <div className="userIndex-bar">
+              <span className="userIndex-photos">Photos</span>
+              <span className="userIndex-albums">Albums</span>
+            </div> 
+            <div className="photoIndex-container">
             <p>Photos</p>
-            <div>
               <div className="photoIndex">
                 <ul>
                   {photos}
                 </ul>
               </div>
             </div>
-          </div>
         </div>
       )
     }

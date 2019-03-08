@@ -51,6 +51,7 @@ class PhotoForm extends React.Component {
   }
 
   render() {
+    document.title = "Upload | Aprtr"
     // Checks to see which part of the upload stage the user is at
     let uploadPage = this.state.uploadState
     const preview = this.state.photoUrl ? <img className="upload2-preview" src={this.state.photoUrl} /> : null;

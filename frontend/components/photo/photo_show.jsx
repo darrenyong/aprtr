@@ -46,6 +46,8 @@ class PhotoShow extends React.Component {
       description = this.props.photo.description;
     }
 
+    document.title = `${title} | Aprtr`
+
     if (this.state.photoEdit) {
       display = (
         <EditPhotoForm 
