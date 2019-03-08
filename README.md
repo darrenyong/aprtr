@@ -22,14 +22,6 @@ Aprtr (Aperture) is an image hosting service inspired by Flickr. It is built usi
 * Creating tags
 
 ## Photos
-
-### Explore
-![Explore Page](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_explore.png)
-
-Once a user has logged in, they can access the Explore Page which acts as a photo
-index. All photos uploaded from all users will be shown on this page. Tabs under
-the navbar will eventually allow users to view different pages of the site. 
-
 ### Uploading
 #### Upload Page 1
 ![Upload Page 1](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_upload1.png)
@@ -68,18 +60,28 @@ if (uploadPage === 0) {
 ***
 
 ### Viewing & Editing
+#### Photo Explore
+![Explore Page](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_explore.png)
+
+Once a user has logged in, they can access the Explore Page which acts as a photo
+index. All photos uploaded from all users will be shown on this page. Tabs under
+the navbar will eventually allow users to view different pages of the site. Clicking 
+on a specific photo in the Explore page brings the user to a photo show page.
+
+
 #### Photo Show
-![Photo Show](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_show.png) <br>
-Clicking on a specific photo in the Explore page brings the user to a photo show page.
+![Photo Show](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_show.png)
+
 On this page, information such as uploader, title and description is displayed about
 each photo. Additionally users can choose to delete the photo or edit the title and
 description <strong>only if they are the current user</strong>.
 
 #### Photo Edit
-![Photo Edit](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_edit.gif) <br>
+![Photo Edit](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_edit.gif)
+
 The edit form only renders if the current user is the same as the uploader. Rendering
 the form on click was handled through local state as well. Clicking the section would
-call a function to modify a local state variable to render the child component. 
+call a function that modifies a local state variable to render the child component. 
 A callback to this function is passed down as a prop to the child component which 
 would be called when the user submits the form. Upon submission, the title and
 description would also be updated.
