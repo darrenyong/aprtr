@@ -94,8 +94,10 @@ class PhotoForm extends React.Component {
               placeholder="Add a title"
               />
             <br />
-            <input
+            <textarea
               type="text"
+              wrap="hard"
+              rows="10"
               value={this.state.description}
               onChange={this.update("description")}
               placeholder="Add a description"
