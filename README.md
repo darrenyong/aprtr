@@ -113,8 +113,8 @@ handleSubmit(e) {
 ### User Profile
 ![User Profile](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_profile.png)
 
-Clicking on the uploader while in the photo show page will direct a user to the user profile.
-The user profile page shows all the photos that a user has uploaded. Tabs under
+Clicking on the uploader while in the photo show page will direct a user to the uploader's 
+profile. The profile page shows all the photos that a user has uploaded. Tabs under
 the header will eventually allow a user to view all the user's photos or albums. 
 *** 
 <br>
