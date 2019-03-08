@@ -39,14 +39,25 @@ class PhotoShow extends React.Component {
   }
   
   render() {
-    let photo, title, description, display, deleteBtn;
+    let photo, title, description, display, deleteBtn, uploader, editBtn, editClass, editClass2;
     if (this.props.photo) {
       photo = this.props.photo.photoUrl;
       title = this.props.photo.title;
       description = this.props.photo.description;
     }
-
     document.title = `${title} | Aprtr`
+
+    if (this.props.isUploader) {
+      uploader = this.toggleEdit
+      editBtn = (<i className="far fa-edit"></i>) 
+      editClass = "photoDetails-container"
+      editClass2 = "photoDetails-child"
+    } else {
+      uploader = null
+      editBtn = null
+      editClass = "photoDetails-container2"
+      editClass2 = "photoDetails-child2"
+    }
 
     if (this.state.photoEdit) {
       display = (
@@ -58,9 +69,9 @@ class PhotoShow extends React.Component {
       ) } else {
         display = (
         <>
-          <div className="photoDetails-container">
-            <i className="far fa-edit"></i>
-            <div onClick={this.toggleEdit} className="photoDetails-child">
+          <div className={editClass}>
+            {editBtn}
+            <div onClick={uploader} className={editClass2}>
               <h1>{title}</h1>
               <h2>{description}</h2>
             </div>

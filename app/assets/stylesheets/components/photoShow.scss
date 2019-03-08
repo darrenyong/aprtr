@@ -96,6 +96,31 @@
   }
 }
 
+.photoDetails-container2 {
+  // Change width to 1000px when you have build out more features on the show page
+  width: 500px;
+
+  h1 {
+    font-family: Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 3vh 10px 15px 10px;
+  }
+
+  h2 {
+    font-family: Helvetica;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0px 25px 3vh 20px;
+  }
+}
+
+.photoDetails-child2 {
+ text-align: center;
+ height: 11vh;
+ border-bottom: 1px solid #cfd6d9;
+}
+
 .photoDetails-child {
   text-align: center;
   height: 8vh;
