@@ -1,32 +1,46 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default(props) => {
+class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleLogout = this.handleLogout.bind(this)
+  }
+
+  handleLogout(e) {
+    e.preventDefault();
+    // debugger
+    this.props.logout().then(() => this.props.history.push("/"));
+    
+  }
+
+  render () {
   let display;
 
-  if (props.currentUserId && props.isUploadPath === false) {
+  if (this.props.currentUserId && this.props.isUploadPath === false) {
     display = (
     <header className="navbar-logged-in">
       <Link className="navbar-logo" to="/">aprtr</Link>
       <div className="navbar-logged-in-btn">
         <Link to="/photos/upload"><i className="fas fa-cloud-upload-alt"></i></Link>
-        <button className="navbar-logout" onClick={props.logout}>Log Out</button>
+        <button className="navbar-logout" onClick={this.handleLogout}>Log Out</button>
       </div>
     </header>
     );
-  } else if (props.isAuthPath === true) {
+  } else if (this.props.isAuthPath === true) {
     display =  (
     <header className="navbar">
       <Link className="navbar-logo" to="/">aprtr</Link>
       {display}
     </header>
     )
-  } else if (props.currentUserId && props.isUploadPath === true) {
+  } else if (this.props.currentUserId && this.props.isUploadPath === true) {
     display = (
     <header className="navbar-logged-in">
       <Link className="navbar-logo" to="/">aprtr</Link>
       <div className="navbarUpload-logged-in-btn">
-        <button className="navbarUpload-logout" onClick={props.logout}>Log Out</button>
+        <button className="navbarUpload-logout" onClick={this.handleLogout}>Log Out</button>
       </div>
     </header>
     ) 
@@ -46,5 +60,8 @@ export default(props) => {
     <>
       {display}
     </>
-  )
+    )
+  }
 }
+
+export default NavBar;
