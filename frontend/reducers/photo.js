@@ -9,7 +9,11 @@ export default (oldState = {}, action) => {
     case RECEIVE_ALL_PHOTOS:
       return action.photos;
     case RECEIVE_USER_PHOTOS:
+    if (!action.photos) {
+      return {}
+    } else {
       return action.photos;
+    }
     case RECEIVE_PHOTO:
       newState = merge({}, oldState, { [action.photo.id]: action.photo });
       return newState;
