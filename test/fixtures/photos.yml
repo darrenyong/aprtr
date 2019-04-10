@@ -8,6 +8,8 @@
 #  uploader_id :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  width       :integer          not null
+#  height      :integer          not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
