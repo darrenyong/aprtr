@@ -1,5 +1,6 @@
 import React from 'react';
 import PhotoIndexItem from './photo_index_item';
+import MyImageGallery from './justified_photo_index';
 
 class PhotoIndex extends React.Component {
   constructor(props) {
@@ -50,9 +51,7 @@ class PhotoIndex extends React.Component {
           <div className="photoIndex-container">
             <h1>Explore</h1>
             <div className="photoIndex">
-              <ul>
-                {photos}
-              </ul>
+              <MyImageGallery className="photoIndex-gallery" images={this.props.photos}/>
             </div>
           </div>
         </div>
@@ -73,7 +72,7 @@ class PhotoIndex extends React.Component {
             <p>Photos</p>
               <div className="photoIndex">
                 <ul>
-                  {photos}
+                  <MyImageGallery className="photoIndex-gallery" images={this.props.photos}/>
                 </ul>
               </div>
             </div>
