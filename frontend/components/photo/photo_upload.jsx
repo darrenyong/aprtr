@@ -69,7 +69,7 @@ class PhotoForm extends React.Component {
             name="upload1-photo"
             id="upload1-photo"
             type="file"
-            accept="image/gif, image/jpeg, image/png"
+            accept="image/jpeg, image/png"
             onChange={this.handleFile}
           />
         </div>
