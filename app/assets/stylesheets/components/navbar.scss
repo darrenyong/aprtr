@@ -56,21 +56,25 @@
   color:#7f7f7f;
 }
 
-.fa-cloud-upload-alt, .fa-cloud-upload-alt:visited{
+.fa-cloud-upload-alt,
+.fa-cloud-upload-alt:visited,
+.fa-user-circle, 
+.fa-user-circle:visited {
   color: white;
   text-decoration: none;
   font-size: 30px;
   padding-top: 2px;
 }
 
-.fa-cloud-upload-alt:hover {
+.fa-cloud-upload-alt:hover, .fa-user-circle:hover {
   color: #bcbcbd;
+  cursor: pointer;
 }
 
 .navbarUpload-logged-in-btn, .navbar-logged-in-btn {
   display: flex;
   align-items: center;
-  width: 165px;
+  width: 200px;
   height: 50px;
   margin-right: 40px;
 }

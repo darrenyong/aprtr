@@ -22,6 +22,7 @@ class NavBar extends React.Component {
     <header className="navbar-logged-in">
       <Link className="navbar-logo" to="/">aprtr</Link>
       <div className="navbar-logged-in-btn">
+        <Link to={`/users/${this.props.currentUserId}/photos`}><i className="far fa-user-circle"></i></Link>
         <Link to="/photos/upload"><i className="fas fa-cloud-upload-alt"></i></Link>
         <button className="navbar-logout" onClick={this.handleLogout}>Log Out</button>
       </div>
@@ -31,7 +32,6 @@ class NavBar extends React.Component {
     display =  (
     <header className="navbar">
       <Link className="navbar-logo" to="/">aprtr</Link>
-      {display}
     </header>
     )
   } else if (this.props.currentUserId && this.props.isUploadPath === true) {
@@ -39,6 +39,7 @@ class NavBar extends React.Component {
     <header className="navbar-logged-in">
       <Link className="navbar-logo" to="/">aprtr</Link>
       <div className="navbarUpload-logged-in-btn">
+        <i class="far fa-user-circle"></i>
         <button className="navbarUpload-logout" onClick={this.handleLogout}>Log Out</button>
       </div>
     </header>
