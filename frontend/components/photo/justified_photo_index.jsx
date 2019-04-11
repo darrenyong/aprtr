@@ -1,5 +1,5 @@
 import React from 'react';
-import JustifiedGrid from 'react-justified-grid';
+import JustifiedGrid from '../react-justified-grid';
 
 class MyImageGallery extends React.Component {
   constructor(props) {
@@ -7,12 +7,13 @@ class MyImageGallery extends React.Component {
   }
 
   render() {
+    // console.log(this.props.images)
     return (
       <JustifiedGrid
         images={this.props.images}
         rows={10}
         maxRowHeight={300} 
-        gutter={2}
+        gutter={3}
         showIncompleteRow={true} />
     )
   }

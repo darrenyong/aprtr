@@ -1,0 +1,101 @@
+{
+  "_from": "react-justified-grid@0.0.8",
+  "_id": "react-justified-grid@0.0.8",
+  "_inBundle": false,
+  "_integrity": "sha512-Hb3MdjsMxvLxAG0NeUYIpAijYmhV6tIG5uCmPwas3WOmMqGiTLV1US5Tcg8VzTOn8NePK8XHbD7/eeuse1Ckwg==",
+  "_location": "/react-justified-grid",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "react-justified-grid@0.0.8",
+    "name": "react-justified-grid",
+    "escapedName": "react-justified-grid",
+    "rawSpec": "0.0.8",
+    "saveSpec": null,
+    "fetchSpec": "0.0.8"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-justified-grid/-/react-justified-grid-0.0.8.tgz",
+  "_shasum": "4f8305998f895d4ff61715cffa198a1eece50d2f",
+  "_spec": "react-justified-grid@0.0.8",
+  "_where": "/Users/darrenyong/Desktop/Aprtr",
+  "author": {
+    "name": "josephj"
+  },
+  "bugs": {
+    "url": "https://github.com/josephj/react-justified-grid/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@types/lodash": "^4.14.117",
+    "lodash": "^4.17.11"
+  },
+  "deprecated": false,
+  "description": "Rendering grid layout without cropping image",
+  "devDependencies": {
+    "@svgr/rollup": "^2.4.1",
+    "@types/enzyme": "^3.1.15",
+    "@types/jest": "^23.1.5",
+    "@types/react": "^16.3.13",
+    "@types/react-dom": "^16.0.5",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
+    "cross-env": "^5.1.4",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "enzyme-to-json": "^3.3.4",
+    "gh-pages": "^1.2.0",
+    "prettier": "^1.14.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts-ts": "^2.16.0",
+    "rollup": "^0.62.0",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-commonjs": "^9.1.3",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss": "^1.6.2",
+    "rollup-plugin-typescript2": "^0.17.0",
+    "rollup-plugin-url": "^1.4.0",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.1.6"
+  },
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/josephj/react-justified-grid#readme",
+  "jsnext:main": "dist/index.es.js",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "name": "react-justified-grid",
+  "peerDependencies": {
+    "prop-types": "^15.5.4",
+    "react": "^15.0.0 || ^16.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josephj/react-justified-grid.git"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "deploy": "gh-pages -d example/build",
+    "predeploy": "cd example && yarn install && yarn run build",
+    "prepare": "yarn run build",
+    "start": "rollup -c -w",
+    "test": "cross-env CI=1 react-scripts-ts test --env=jsdom  --no-watchman  --setupFiles ./src/setupTests.js",
+    "test:watch": "react-scripts-ts test --env=jsdom  --no-watchman  --setupFiles ./src/setupTests.js"
+  },
+  "version": "0.0.8"
+}

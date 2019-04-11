@@ -39,7 +39,7 @@ class NavBar extends React.Component {
     <header className="navbar-logged-in">
       <Link className="navbar-logo" to="/">aprtr</Link>
       <div className="navbarUpload-logged-in-btn">
-        <i class="far fa-user-circle"></i>
+        <i className="far fa-user-circle"></i>
         <button className="navbarUpload-logout" onClick={this.handleLogout}>Log Out</button>
       </div>
     </header>
