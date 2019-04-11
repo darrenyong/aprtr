@@ -11,7 +11,7 @@ class MyImageGallery extends React.Component {
     return (
       <JustifiedGrid
         images={this.props.images}
-        rows={10}
+        rows={30}
         maxRowHeight={300} 
         gutter={3}
         showIncompleteRow={true} />
