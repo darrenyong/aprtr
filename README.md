@@ -65,7 +65,10 @@ if (uploadPage === 0) {
 ![Explore Page](https://github.com/darrenyong/Aprtr/blob/master/docs/readme_images/aprtr_explore.png)
 
 Once a user has logged in, they can access the Explore Page which acts as a photo
-index. All photos uploaded from all users will be shown on this page. Tabs under
+index. The beautiful and responsive justified grid for the Explore Page was made 
+possible through [FastImage](https://github.com/sdsykes/fastimage) and 
+[React-Justified-Grid](https://github.com/josephj/react-justified-grid).
+All photos uploaded from all users will be shown on this page. Tabs under
 the navbar will eventually allow users to view different pages of the site. Clicking 
 on a specific photo in the Explore page brings the user to a photo show page.
 
