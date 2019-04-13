@@ -13,7 +13,7 @@ class MyImageGallery extends React.Component {
         images={this.props.images}
         rows={30}
         maxRowHeight={300} 
-        gutter={3}
+        gutter={4}
         showIncompleteRow={true} />
     )
   }
