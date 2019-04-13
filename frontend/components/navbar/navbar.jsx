@@ -22,7 +22,7 @@ class NavBar extends React.Component {
     <header className="navbar-logged-in">
       <Link className="navbar-logo" to="/">aprtr</Link>
       <div className="navbar-logged-in-btn">
-        <Link to={`/users/${this.props.currentUserId}/photos`}><i className="far fa-user-circle"></i></Link>
+        {/* <Link to={`/users/${this.props.currentUserId}/photos`}><i className="far fa-user-circle"></i></Link> */}
         <Link to="/photos/upload"><i className="fas fa-cloud-upload-alt"></i></Link>
         <button className="navbar-logout" onClick={this.handleLogout}>Log Out</button>
       </div>
@@ -39,7 +39,7 @@ class NavBar extends React.Component {
     <header className="navbar-logged-in">
       <Link className="navbar-logo" to="/">aprtr</Link>
       <div className="navbarUpload-logged-in-btn">
-        <i className="far fa-user-circle"></i>
+        {/* <i className="far fa-user-circle"></i> */}
         <button className="navbarUpload-logout" onClick={this.handleLogout}>Log Out</button>
       </div>
     </header>
