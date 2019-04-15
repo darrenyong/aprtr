@@ -1,3 +1,4 @@
+// Index
 export const fetchAllUserAlbums = (id) => {
   return (
     $.ajax({
@@ -7,6 +8,7 @@ export const fetchAllUserAlbums = (id) => {
   )
 }
 
+// Create
 export const createAlbum = () => {
   return (
     $.ajax({
@@ -16,6 +18,7 @@ export const createAlbum = () => {
   )
 }
 
+// Show
 export const fetchAlbum = (id) => {
   return (
     $.ajax({
@@ -25,6 +28,7 @@ export const fetchAlbum = (id) => {
   )
 }
 
+// Update
 export const updateAlbum = (album) => {
   return (
     $.ajax({
@@ -34,6 +38,7 @@ export const updateAlbum = (album) => {
   )
 }
 
+// Delete
 export const deleteAlbum = (id) => {
   return (
     $.ajax({
