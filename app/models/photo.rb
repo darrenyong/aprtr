@@ -23,6 +23,14 @@ class Photo < ApplicationRecord
     
   has_one_attached :picture
 
+  has_many :album_photos,
+    primary_key: :id,
+    foreign_key: :photo_id,
+    class_name: 'AlbumPhoto'
+
+  has_many :albums,
+    through: :album_photos,
+    source: :album
 
   # def ensure_photo
   #   unless self.photo.attached?

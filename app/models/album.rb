@@ -18,4 +18,13 @@ class Album < ApplicationRecord
     foreign_key: :user_id,
     class_name: 'User'
 
+  has_many :album_photos,
+    primary_key: :id,
+    foreign_key: :album_id,
+    class_name: 'AlbumPhoto'
+
+  has_many :photos,
+    through: :album_photos,
+    source: :photo
+  
 end
