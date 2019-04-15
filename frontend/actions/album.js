@@ -30,8 +30,8 @@ export const fetchAllUserAlbums = () => (dispatch) => {
                      )
 }
 
-export const fetchAlbum = () => (dispatch) => {
-  return AlbumAPIUtil.fetchAlbum()
+export const fetchAlbum = (id) => (dispatch) => {
+  return AlbumAPIUtil.fetchAlbum(id)
                      .then(
                        (album) => (dispatch(receiveAlbum(album)))
                      )
