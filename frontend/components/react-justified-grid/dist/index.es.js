@@ -17267,7 +17267,6 @@ var JustifiedGrid = /** @class */ (function (_super) {
             return (createElement("div", __assign({ ref: function (el) { return (_this.wrapperEl = el); }, style: lodash_6(defaultStyle, style) }, otherProps), children(images)));
         }
         return (createElement("div", __assign({ ref: function (el) { return (_this.wrapperEl = el); }, style: lodash_6(defaultStyle, style) }, otherProps), images.map(function (image, i) {
-          console.log(image)
             return (createElement("div", { key: i, "data-offset": i, "data-row-offset": image.rowOffset, style: {
                     position: 'absolute',
                     top: image.top,
