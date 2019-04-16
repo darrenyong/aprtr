@@ -20,13 +20,6 @@
   width: 85vmax;
 }
 
-.photoIndex-container h1 {
-  font-size: 26px;
-  padding: 30px 0px 10px 1px;
-  font-family: Helvetica;
-  font-weight: 300;
-}
-
 .photoIndex-bar, .userIndex-bar {
   width: 100%;
   flex-wrap: wrap;
@@ -36,7 +29,8 @@
 }
 
 .photoIndex-bar span, .userIndex-bar span {
-  padding: 0px 20px;
+  padding: 0px 10px;
+  margin: 0px 10px;
   font-size: 16px;
   height: 100%;
 }
@@ -57,7 +51,9 @@
   margin: 1px 2.5px;
 }
 
-
+.userIndex-photos, .userIndex-albums {
+  box-shadow: inset 0px -3px 0px 0px #44bb4e;
+}
 
 // .photoIndexItem-overlay {
 //   position: absolute;
