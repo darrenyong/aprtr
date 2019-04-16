@@ -1,6 +1,7 @@
 import React from 'react';
 import PhotoIndexItem from './photo_index_item';
 import MyImageGallery from './justified_photo_index';
+import AlbumIndex from '../album/user_album_index_container'
 
 class PhotoIndex extends React.Component {
   constructor(props) {
@@ -61,6 +62,11 @@ class PhotoIndex extends React.Component {
 
     if (this.state.userIndexType === "Photo") {
       subDisplay = (
+        <>
+        <div className="userIndex-bar">
+          <span className="userIndex-photos" onClick={this.changeToPhoto}>Photos</span>
+          <span onClick={this.changeToAlbum}>Albums</span>
+        </div>
         <div className="photoIndex-container">
           <p>Photos</p>
           <div className="photoIndex">
@@ -69,9 +75,25 @@ class PhotoIndex extends React.Component {
             </ul>
           </div>
         </div>
+        </>
       )
     } else {
-      subDisplay = "This is where Albums will go"
+      subDisplay = (
+        <>
+        <div className="userIndex-bar">
+          <span onClick={this.changeToPhoto}>Photos</span>
+            <span className="userIndex-albums" onClick={this.changeToAlbum}>Albums</span>
+        </div>
+        <div className="albumIndex-container">
+          <p>Albums</p>
+          <div className="albumIndex">
+            <ul>
+              <AlbumIndex />
+            </ul>
+          </div>
+        </div>
+        </>
+      )
     }
 
     if (this.props.containerType === "photoIndex") {
@@ -98,11 +120,7 @@ class PhotoIndex extends React.Component {
             <h1>{username}</h1>
             <h3>{this.props.photoCount} Photos</h3>
           </div>
-            <div className="userIndex-bar">
-              <span onClick={this.changeToPhoto}>Photos</span>
-              <span onClick={this.changeToAlbum}>Albums</span>
-            </div>
-            {subDisplay}
+          {subDisplay}
         </div>
       )
     }

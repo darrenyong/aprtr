@@ -6,7 +6,6 @@ class NavBar extends React.Component {
     super(props);
 
     this.handleLogout = this.handleLogout.bind(this);
-    this.testAlbum = this.testAlbum.bind(this)
   }
 
   handleLogout(e) {
@@ -15,20 +14,8 @@ class NavBar extends React.Component {
     
   }
 
-  testAlbum(e) {
-    e.preventDefault();
-    let testData = {
-      album: {
-        title: "Test",
-        description: "test"
-      }
-    }
-    this.props.createAlbum(testData).then( (res) => console.log(res) )
-  }
-
   render () {
   let display;
-  console.log(this.props);
 
   if (this.props.currentUserId && this.props.isUploadPath === false) {
     display = (
@@ -36,7 +23,6 @@ class NavBar extends React.Component {
       <Link className="navbar-logo" to="/">aprtr</Link>
       <div className="navbar-logged-in-btn">
         {/* <Link to={`/users/${this.props.currentUserId}/photos`}><i className="far fa-user-circle"></i></Link> */}
-        <button onClick={this.testAlbum}>Test</button>
         <Link to="/photos/upload"><i className="fas fa-cloud-upload-alt"></i></Link>
         <button className="navbar-logout" onClick={this.handleLogout}>Log Out</button>
       </div>

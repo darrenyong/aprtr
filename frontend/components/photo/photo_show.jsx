@@ -102,7 +102,7 @@ class PhotoShow extends React.Component {
         <div className="photoShow-container">
           <img className="photoShow-photo" src={`${photo}`} />
           <div className="photoShow-uploaderContainer">
-              <Link className="photoShow-uploader" to={`/users/${this.props.uploaderId}/photos`}>{this.props.uploader}</Link>
+              <Link className="photoShow-uploader" to={`/users/${this.props.uploaderId}`}>{this.props.uploader}</Link>
           </div>
           <div className="photoShow-delete">
             {deleteBtn}
