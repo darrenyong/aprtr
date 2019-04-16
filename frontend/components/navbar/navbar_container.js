@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Navbar from "./navbar";
 import { deleteSession } from "../../actions/session";
+import { createAlbum } from "../../actions/album"
 
 const mSP = (state, ownProps) => {
   return ({
@@ -14,7 +15,8 @@ const mSP = (state, ownProps) => {
 
 const mDP = (dispatch) => {
   return ({
-    logout: () => dispatch(deleteSession())
+    logout: () => dispatch(deleteSession()),
+    createAlbum: (album) => dispatch(createAlbum(album))
   })
 }
 
