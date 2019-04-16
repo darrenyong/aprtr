@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PhotoShow from './photo_show';
-import { fetchPhoto, deletePhoto, updatePhoto } from '../../actions/photo';
+import { fetchPhoto, deletePhoto, updatePhoto } from '../../actions/photo_actions';
 
 const mSP = (state, ownProps) => {
   let photoId = ownProps.match.params.id

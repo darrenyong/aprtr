@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { createSession, clearSessionErrors } from "../../actions/session";
+import { createSession, clearSessionErrors } from "../../actions/session_actions";
 import Error from "./error";
 
 const mSP = (state) => {

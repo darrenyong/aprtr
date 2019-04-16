@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import PhotoIndex from "./photo_index";
-import { fetchAllPhotos } from "../../actions/photo"
+import { fetchAllPhotos } from "../../actions/photo_actions"
 
 const mSP = (state) => {
   return ({

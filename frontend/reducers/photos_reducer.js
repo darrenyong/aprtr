@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO, RECEIVE_USER_PHOTOS } from "../actions/photo"
+import { RECEIVE_ALL_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO, RECEIVE_USER_PHOTOS } from "../actions/photo_actions"
 import merge from "lodash/merge";
 
 export default (oldState = {}, action) => {

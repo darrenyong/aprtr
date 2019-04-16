@@ -1,5 +1,5 @@
-import { RECEIVE_CURRENT_USER } from "../actions/user"
-import { RECEIVE_USER_PHOTOS, RECEIVE_PHOTO } from "../actions/photo"
+import { RECEIVE_CURRENT_USER } from "../actions/user_actions"
+import { RECEIVE_USER_PHOTOS, RECEIVE_PHOTO } from "../actions/photo_actions"
 
 
 export default (oldState = {}, action) => {

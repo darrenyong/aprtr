@@ -1,4 +1,4 @@
-import { RECEIVE_USER_ALBUMS, RECEIVE_ALBUM, REMOVE_ALBUM } from "../actions/album"
+import { RECEIVE_USER_ALBUMS, RECEIVE_ALBUM, REMOVE_ALBUM } from "../actions/album_actions"
 import merge from "lodash/merge";
 
 export default (oldState = {}, action) => {
