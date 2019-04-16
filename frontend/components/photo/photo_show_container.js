@@ -6,7 +6,6 @@ const mSP = (state, ownProps) => {
   let photoId = ownProps.match.params.id
   let photo = state.entities.photos[photoId]
   let user = photo ? (state.entities.users[state.entities.photos[photoId].uploaderId]) : null
-  // console.log(state.entities)
   return ({
     photoId: photoId,
     isUploader: photo ? (state.session === state.entities.photos[photoId].uploaderId) : false,

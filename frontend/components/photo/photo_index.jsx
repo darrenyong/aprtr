@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PhotoIndexItem from './photo_index_item';
 import MyImageGallery from './justified_photo_index';
-import AlbumIndex from '../album/user_album_index_container'
 
 class PhotoIndex extends React.Component {
   constructor(props) {
@@ -12,14 +12,7 @@ class PhotoIndex extends React.Component {
     this.state = {
       userIndexType: "Photo"
     }
-
-    this.changeToAlbum = this.changeToAlbum.bind(this);
-    this.changeToPhoto = this.changeToPhoto.bind(this);
   }
-
-  // componentWillUnmount() {
-  //   this.position = window.pageYOffset
-  // }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
@@ -36,64 +29,11 @@ class PhotoIndex extends React.Component {
     }
   }
 
-  changeToAlbum() {
-    this.setState({
-      userIndexType: "Album"
-    })
-  }
-
-  changeToPhoto() {
-    this.setState({
-      userIndexType: "Photo"
-    })
-  }
-
   render() {
-    let photos, display, subDisplay, username;
-    photos = this.props.photos.map( (photo) => {
-      return (
-        <PhotoIndexItem key={photo.id} photo={photo} />
-      )
-    })
+    let display, username;
 
     if (this.props.user) {
       username = this.props.user.username
-    }
-
-    if (this.state.userIndexType === "Photo") {
-      subDisplay = (
-        <>
-        <div className="userIndex-bar">
-          <span className="userIndex-photos" onClick={this.changeToPhoto}>Photos</span>
-          <span onClick={this.changeToAlbum}>Albums</span>
-        </div>
-        <div className="photoIndex-container">
-          <p>Photos</p>
-          <div className="photoIndex">
-            <ul>
-              <MyImageGallery className="photoIndex-gallery" images={this.props.photos} />
-            </ul>
-          </div>
-        </div>
-        </>
-      )
-    } else {
-      subDisplay = (
-        <>
-        <div className="userIndex-bar">
-          <span onClick={this.changeToPhoto}>Photos</span>
-            <span className="userIndex-albums" onClick={this.changeToAlbum}>Albums</span>
-        </div>
-        <div className="albumIndex-container">
-          <p>Albums</p>
-          <div className="albumIndex">
-            <ul>
-              <AlbumIndex />
-            </ul>
-          </div>
-        </div>
-        </>
-      )
     }
 
     if (this.props.containerType === "photoIndex") {
@@ -120,7 +60,18 @@ class PhotoIndex extends React.Component {
             <h1>{username}</h1>
             <h3>{this.props.photoCount} Photos</h3>
           </div>
-          {subDisplay}
+          <div className="userIndex-bar">
+            <Link className="userIndex-photos selected-shadow" to={`/users/${this.props.match.params.id}/photos`}>Photos</Link>
+            <Link className="userIndex-albums" to={`/users/${this.props.match.params.id}/albums`}>Albums</Link>
+          </div>
+          <div className="photoIndex-container">
+            <p>Photos</p>
+            <div className="photoIndex">
+              <ul>
+                <MyImageGallery className="photoIndex-gallery" images={this.props.photos} />
+              </ul>
+            </div>
+          </div>
         </div>
       )
     }

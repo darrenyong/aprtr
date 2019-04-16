@@ -1,6 +1,6 @@
 import React from 'react';
 import { EditPhotoForm } from '../photo/edit_photo_form_container';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 class PhotoShow extends React.Component {
   constructor(props) {
@@ -102,7 +102,7 @@ class PhotoShow extends React.Component {
         <div className="photoShow-container">
           <img className="photoShow-photo" src={`${photo}`} />
           <div className="photoShow-uploaderContainer">
-              <Link className="photoShow-uploader" to={`/users/${this.props.uploaderId}`}>{this.props.uploader}</Link>
+              <Link className="photoShow-uploader" to={`/users/${this.props.uploaderId}/photos`}>{this.props.uploader}</Link>
           </div>
           <div className="photoShow-delete">
             {deleteBtn}
