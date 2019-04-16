@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import PhotoIndex from "./photo_index";
 import { fetchAllPhotos } from "../../actions/photo"
