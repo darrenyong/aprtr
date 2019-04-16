@@ -7,6 +7,13 @@ class PhotoIndex extends React.Component {
     super(props);
 
     this.position = null;
+
+    this.state = {
+      userIndexType: "Photo"
+    }
+
+    this.changeToAlbum = this.changeToAlbum.bind(this);
+    this.changeToPhoto = this.changeToPhoto.bind(this);
   }
 
   // componentWillUnmount() {
@@ -28,8 +35,20 @@ class PhotoIndex extends React.Component {
     }
   }
 
+  changeToAlbum() {
+    this.setState({
+      userIndexType: "Album"
+    })
+  }
+
+  changeToPhoto() {
+    this.setState({
+      userIndexType: "Photo"
+    })
+  }
+
   render() {
-    let photos, display, username;
+    let photos, display, subDisplay, username;
     photos = this.props.photos.map( (photo) => {
       return (
         <PhotoIndexItem key={photo.id} photo={photo} />
@@ -38,6 +57,21 @@ class PhotoIndex extends React.Component {
 
     if (this.props.user) {
       username = this.props.user.username
+    }
+
+    if (this.state.userIndexType === "Photo") {
+      subDisplay = (
+        <div className="photoIndex-container">
+          <p>Photos</p>
+          <div className="photoIndex">
+            <ul>
+              <MyImageGallery className="photoIndex-gallery" images={this.props.photos} />
+            </ul>
+          </div>
+        </div>
+      )
+    } else {
+      subDisplay = "This is where Albums will go"
     }
 
     if (this.props.containerType === "photoIndex") {
@@ -65,17 +99,10 @@ class PhotoIndex extends React.Component {
             <h3>{this.props.photoCount} Photos</h3>
           </div>
             <div className="userIndex-bar">
-              <span className="userIndex-photos">Photos</span>
-              <span className="userIndex-albums">Albums</span>
-            </div> 
-            <div className="photoIndex-container">
-            <p>Photos</p>
-              <div className="photoIndex">
-                <ul>
-                  <MyImageGallery className="photoIndex-gallery" images={this.props.photos}/>
-                </ul>
-              </div>
+              <span onClick={this.changeToPhoto}>Photos</span>
+              <span onClick={this.changeToAlbum}>Albums</span>
             </div>
+            {subDisplay}
         </div>
       )
     }
