@@ -13,6 +13,7 @@ import UserPhotoIndexContainer from "./photo/user_photo_index_container"
 import UserAlbumIndexContainer from "./album/user_album_index_container"
 import PhotoShowContainer from "./photo/photo_show_container"
 import PhotoUploadContainer from "./photo/create_photo_form_container"
+import AlbumShowContainer from "./album/album_show_container"
 
 export default class App extends React.Component {
   constructor(props) {
@@ -41,6 +42,9 @@ export default class App extends React.Component {
           <ProtectedRoute exact path="/photos/upload" component={PhotoUploadContainer} />
           <Route exact path="/photos/:id" component={PhotoShowContainer} />
           <Route exact path="/photos/" component={PhotoIndexContainer} />
+
+          {/* Albums */}
+          <Route exact path="/albums/:id" component={AlbumShowContainer} />
 
           {/* Splash Page */}
           <SplashRoute exact path="/" loggedInComponent={PhotoIndexContainer} loggedOutComponent={SplashContainer}/>

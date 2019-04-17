@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AlbumIndexItem from './album_index_item'
 
 class AlbumIndex extends React.Component {
   constructor(props) {
@@ -9,17 +10,29 @@ class AlbumIndex extends React.Component {
 
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      this.props.fetchAlbums(this.props.match.params.id);
+    }
+  }
+
   componentDidMount() {
     this.props.fetchAlbums(this.props.userId)
   }
 
   render() {
     console.log(this.props);
-    let display, username;
+    let display, albums, username;
 
     if (this.props.user) {
       username = this.props.user.username
     }
+
+    albums = this.props.albums.map((album) => {
+      return (
+        <AlbumIndexItem key={album.id} album={album} />
+      )
+    })
 
     document.title = `${username} | Aprtr`
     display = (
@@ -35,7 +48,9 @@ class AlbumIndex extends React.Component {
         <div className="photoIndex-container">
           <p>Albums</p>
           <div className="photoIndex">
-
+            <ul>
+              {albums}
+            </ul>
           </div>
         </div>
       </div>
