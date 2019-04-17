@@ -22,10 +22,10 @@ class Api::AlbumsController < ApplicationController
 
   def show
     @album = Album.find_by(id: params[:id])
-    @photos = @album.photos
-    @user = User.find_by(id: @album.user_id)
 
     if @album
+      @photos = @album.photos
+      @user = User.find_by(id: @album.user_id)
       render :show
     else
       render json: ["Album not found!"], status: 404

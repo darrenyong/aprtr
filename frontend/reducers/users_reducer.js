@@ -9,6 +9,7 @@ export default (oldState = {}, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
     case RECEIVE_PHOTO:
+    case RECEIVE_ALBUM:
     return Object.assign({}, oldState, {[action.user.id]: action.user})
     case RECEIVE_USER_ALBUMS:
     case RECEIVE_USER_PHOTOS:

@@ -9,7 +9,7 @@ end
 @photos.each do |photo|
   json.photos do
     json.set! photo.id do
-      json.extract! photo, :id, :title, :description, :uploader_id
+      json.extract! photo, :id, :title, :description, :uploader_id, :width, :height
       json.src url_for(photo.picture)
     end
   end
