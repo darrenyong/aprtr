@@ -21,7 +21,6 @@ class AlbumIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     let display, albums, username;
 
     if (this.props.user) {

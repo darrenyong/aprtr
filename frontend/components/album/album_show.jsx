@@ -7,9 +7,23 @@ class AlbumShow extends React.Component {
 
   }
 
+  componentDidMount() {
+    this.props.fetchAlbum(this.props.albumId)
+  }
+
   render() {
+    console.log(this.props)
     return (
-        <h1>This is the Album Show Page.</h1>
+      <>
+        <div className="albumShow-parent">
+          <div className="albumShow-header">
+            This is where the header goes
+          </div>
+          <div className="albumShow-photos">
+            This is where the photos go
+          </div>
+        </div>
+      </>
     );
   }
 }
