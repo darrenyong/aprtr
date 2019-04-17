@@ -201,4 +201,17 @@ ActiveRecord::Base.transaction do
     photo47.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/myIS.jpg"), filename: "darrenIS.jpg")
     photo49.picture.attach(io: open("https://s3-us-west-1.amazonaws.com/aprtr-seed/mochi.jpg"), filename: "mochi.jpg")
     
+
+  # Albums
+  Album.destroy_all
+  album1 = Album.create!(title: "test1", description: "test1", user_id: user1.id) 
+  album2 = Album.create!(title: "test2", description: "test2", user_id: user2.id)
+  album3 = Album.create!(title: "test2", description: "test2", user_id: user9.id)
+
+  # Album Photos Join Table
+  albumPhoto1 = AlbumPhoto.create!(photo_id: photo1.id, album_id: album1.id);
+  albumPhoto2 = AlbumPhoto.create!(photo_id: photo30.id, album_id: album1.id);
+  albumPhoto3 = AlbumPhoto.create!(photo_id: photo41.id, album_id: album3.id);
+  albumPhoto4 = AlbumPhoto.create!(photo_id: photo20.id, album_id: album3.id);
+
   end
