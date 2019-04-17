@@ -12,9 +12,11 @@ const receiveUserAlbums = ({ albums, users }) => ({
   users: users
 })
 
-const receiveAlbum = (album) => ({
+const receiveAlbum = ({ album, user, photos }) => ({
   type: RECEIVE_ALBUM,
-  album: album
+  album: album,
+  user: user,
+  photos: photos
 })
 
 const removeAlbum = (id) => ({

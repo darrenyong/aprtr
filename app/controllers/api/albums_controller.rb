@@ -21,7 +21,9 @@ class Api::AlbumsController < ApplicationController
   end
 
   def show
-    @album = Album.find_by(id: params[:id]) 
+    @album = Album.find_by(id: params[:id])
+    @photos = @album.photos
+    @user = User.find_by(id: @album.user_id)
 
     if @album
       render :show
