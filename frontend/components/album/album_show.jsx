@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import MyImageGallery from '../photo/justified_photo_index'
+import MyImageGallery from './justified_album_index'
 
 class AlbumShow extends React.Component {
   constructor(props) {
     super(props)
-
   }
 
   componentDidUpdate(prevProps) {
@@ -23,7 +22,6 @@ class AlbumShow extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     let albumTitle, albumDescription, user, photoCount;
     if (this.props.album) {
       albumTitle = this.props.album.title;
@@ -35,14 +33,20 @@ class AlbumShow extends React.Component {
     return (
       <>
         <div className="albumShow-parent">
-          <div className="albumShow-header">
-            <h1>{albumTitle}</h1>
-            <h2>{albumDescription}</h2>
-            <h2>{photoCount} photos</h2>
-            Created by: {user}
-          </div>
-          <div className="albumShow-photos">
-            <MyImageGallery className="photoIndex-gallery" images={this.props.photos} />
+          <div className="albumShow-container">
+            <div className="albumShow-header">
+              <div className="albumShow-back" onClick={() => this.props.history.push(`/users/${this.props.userId}/albums`)}>
+                <span>&#8592;</span>
+                <p>Back to Albums list</p>
+              </div> 
+              <h1>{albumTitle}</h1>
+              <h2>{albumDescription}</h2>
+              <h2>{photoCount} photos</h2>
+              <h3>By: {user}</h3>
+            </div>
+            <div className="albumShow-photos">
+              <MyImageGallery className="photoIndex-gallery" images={this.props.photos} />
+            </div>
           </div>
         </div>
       </>
