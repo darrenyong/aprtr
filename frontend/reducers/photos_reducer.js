@@ -1,4 +1,5 @@
 import { RECEIVE_ALL_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO, RECEIVE_USER_PHOTOS } from "../actions/photo_actions"
+import { RECEIVE_ALBUM } from "../actions/album_actions"
 import merge from "lodash/merge";
 
 export default (oldState = {}, action) => {
@@ -9,6 +10,7 @@ export default (oldState = {}, action) => {
     case RECEIVE_ALL_PHOTOS:
       return action.photos;
     case RECEIVE_USER_PHOTOS:
+    case RECEIVE_ALBUM:
     if (!action.photos) {
       return {}
     } else {
