@@ -3,7 +3,6 @@ import AlbumIndex from "./album_index";
 import { fetchAllUserAlbums } from "../../actions/album_actions"
 
 const mSP = (state, ownProps) => {
-  console.log(state);
   let albums = Object.values(state.entities.albums)
   let userId = ownProps.match.params.id
   return ({
