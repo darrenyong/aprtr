@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PhotoIndexItem from './photo_index_item';
 import MyImageGallery from './justified_photo_index';
 
 class PhotoIndex extends React.Component {
