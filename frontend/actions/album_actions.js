@@ -6,9 +6,10 @@ export const RECEIVE_ALBUM = "RECEIVE_ALBUM";
 export const REMOVE_ALBUM = "REMOVE_ALBUM";
 
 // Regular actions
-const receiveUserAlbums = (albums) => ({
+const receiveUserAlbums = ({ albums, users }) => ({
   type: RECEIVE_USER_ALBUMS,
-  albums: albums
+  albums: albums,
+  users: users
 })
 
 const receiveAlbum = (album) => ({
@@ -23,8 +24,8 @@ const removeAlbum = (id) => ({
 
 
 // Thunk actions
-export const fetchAllUserAlbums = () => (dispatch) => {
-  return AlbumAPIUtil.fetchAllUserAlbums()
+export const fetchAllUserAlbums = (id) => (dispatch) => {
+  return AlbumAPIUtil.fetchAllUserAlbums(id)
                      .then(
                        (albums) => (dispatch(receiveUserAlbums(albums)))
                      )
