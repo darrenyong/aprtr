@@ -9,7 +9,9 @@ class PhotoForm extends React.Component {
       description: "",
       picture: null,
       uploadState: 0,
-      photoUrl: null
+      photoUrl: null,
+      photoWidth: 0,
+      photoHeight: 0
     }
 
     this.update = this.update.bind(this);
@@ -28,13 +30,21 @@ class PhotoForm extends React.Component {
   handleFile(e) {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader;
-    fileReader.onloadend = () => {   
-      this.setState({
-        picture: file,
-        photoUrl: fileReader.result,
-        uploadState: 1
-      })
+
+    fileReader.onloadend = () => { 
+      let img = document.createElement("img");
+      img.src = fileReader.result
+      img.onload = () => {   
+        this.setState({
+          picture: file,
+          photoUrl: fileReader.result,
+          uploadState: 1,
+          photoWidth: img.width,
+          photoHeight: img.height
+        })
+      }
     }
+
     if (file) {
       fileReader.readAsDataURL(file);
     }
@@ -46,10 +56,14 @@ class PhotoForm extends React.Component {
     formData.append("photo[title]", this.state.title);
     formData.append("photo[description]", this.state.description);
     formData.append("photo[picture]", this.state.picture);
+    formData.append("photo[width]", this.state.photoWidth);
+    formData.append("photo[height]", this.state.photoHeight);
     this.props.action(formData).then((res) => this.props.history.push(`/photos/${res.photo.id}`));
   }
 
   render() {
+    console.log(this.state);
+    console.log(typeof this.state.photoWidth);
     document.title = "Upload | Aprtr"
     // Checks to see which part of the upload stage the user is at
     let uploadPage = this.state.uploadState
