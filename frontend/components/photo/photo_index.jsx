@@ -1,5 +1,5 @@
 import React from 'react';
-import PhotoIndexItem from './photo_index_item';
+import { Link } from 'react-router-dom';
 import MyImageGallery from './justified_photo_index';
 
 class PhotoIndex extends React.Component {
@@ -7,11 +7,11 @@ class PhotoIndex extends React.Component {
     super(props);
 
     this.position = null;
-  }
 
-  // componentWillUnmount() {
-  //   this.position = window.pageYOffset
-  // }
+    this.state = {
+      userIndexType: "Photo"
+    }
+  }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
@@ -29,12 +29,7 @@ class PhotoIndex extends React.Component {
   }
 
   render() {
-    let photos, display, username;
-    photos = this.props.photos.map( (photo) => {
-      return (
-        <PhotoIndexItem key={photo.id} photo={photo} />
-      )
-    })
+    let display, username;
 
     if (this.props.user) {
       username = this.props.user.username
@@ -64,18 +59,18 @@ class PhotoIndex extends React.Component {
             <h1>{username}</h1>
             <h3>{this.props.photoCount} Photos</h3>
           </div>
-            <div className="userIndex-bar">
-              <span className="userIndex-photos">Photos</span>
-              <span className="userIndex-albums">Albums</span>
-            </div> 
-            <div className="photoIndex-container">
+          <div className="userIndex-bar">
+            <Link className="userIndex-photos selected-shadow" to={`/users/${this.props.match.params.id}/photos`}>Photos</Link>
+            <Link className="userIndex-albums" to={`/users/${this.props.match.params.id}/albums`}>Albums</Link>
+          </div>
+          <div className="photoIndex-container">
             <p>Photos</p>
-              <div className="photoIndex">
-                <ul>
-                  <MyImageGallery className="photoIndex-gallery" images={this.props.photos}/>
-                </ul>
-              </div>
+            <div className="photoIndex">
+              <ul>
+                <MyImageGallery className="photoIndex-gallery" images={this.props.photos} />
+              </ul>
             </div>
+          </div>
         </div>
       )
     }

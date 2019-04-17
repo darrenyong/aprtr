@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 
 class PhotoForm extends React.Component {
   constructor(props) {

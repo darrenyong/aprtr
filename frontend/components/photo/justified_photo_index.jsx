@@ -7,7 +7,6 @@ class MyImageGallery extends React.Component {
   }
 
   render() {
-    // console.log(this.props.images)
     return (
       <JustifiedGrid
         images={this.props.images}

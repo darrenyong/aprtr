@@ -1,7 +1,6 @@
-import React from "react";
 import { connect } from "react-redux";
 import Navbar from "./navbar";
-import { deleteSession } from "../../actions/session";
+import { deleteSession } from "../../actions/session_actions";
 
 const mSP = (state, ownProps) => {
   return ({

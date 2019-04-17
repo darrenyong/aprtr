@@ -1,5 +1,5 @@
-import { RECEIVE_ALL_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO, RECEIVE_USER_PHOTOS } from "../actions/photo"
-import merge from 'lodash/merge';
+import { RECEIVE_ALL_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO, RECEIVE_USER_PHOTOS } from "../actions/photo_actions"
+import merge from "lodash/merge";
 
 export default (oldState = {}, action) => {
   Object.freeze(oldState)

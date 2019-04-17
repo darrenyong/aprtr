@@ -2,6 +2,7 @@ class Api::AlbumsController < ApplicationController
   def index
     if params[:user_id]
       @albums = Album.all.select{ |album| album.user_id.to_s == params[:user_id]}
+      @user = User.find_by(id: params[:user_id])
       render :index
     else
       @albums = nil

@@ -2,7 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.photoIndex-parent, .photoIndex-bar, .userIndex-bar, .photoIndex-bar span, .userIndex-bar span {
+.photoIndex-parent,
+.photoIndex-bar,
+.userIndex-bar,
+.photoIndex-bar span,
+.userIndex-albums,
+.userIndex-photos {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,9 +40,14 @@
   font-family: Helvetica;
 }
 
-.photoIndex-bar span, .userIndex-bar span {
-  padding: 0px 20px;
+.photoIndex-bar span, 
+.userIndex-albums, 
+.userIndex-photos {
+  text-decoration: none;
+  padding: 0px 10px;
+  margin: 0px 10px;
   font-size: 16px;
+  color: black;
   height: 100%;
 }
 
@@ -45,9 +55,17 @@
   margin-top: 63px;
 }
 
-.photoIndex-bar span:hover, .userIndex-bar span:hover {
+.photoIndex-bar span:hover, 
+.userIndex-photos:hover,
+.userIndex-albums:hover {
   box-shadow: inset 0px -3px 0px 0px #44bb4e;
+  text-decoration: none;
+  cursor: pointer;
   // border-bottom: 5px solid #128fdc;
+}
+
+.selected-shadow {
+  box-shadow: inset 0px -3px 0px 0px #44bb4e;
 }
 
 .photoIndexItem {
@@ -55,8 +73,6 @@
   width: auto;
   margin: 1px 2.5px;
 }
-
-
 
 // .photoIndexItem-overlay {
 //   position: absolute;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchPhoto, updatePhoto } from '../../actions/photo';
+import { fetchPhoto, updatePhoto } from '../../actions/photo_actions';
 
 const mDP = (dispatch) => {
   return ({

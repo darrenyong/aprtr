@@ -13,7 +13,7 @@ const receivePhotos = (photos) => ({
   type: RECEIVE_ALL_PHOTOS,
   photos: photos
 });
-const receiveUserPhotos = ({photos, users}) => ({
+const receiveUserPhotos = ({ photos, users }) => ({
   type: RECEIVE_USER_PHOTOS,
   photos: photos,
   users: users
@@ -43,47 +43,47 @@ export const clearPhotoErrors = () => ({
 // Thunk actions
 export const fetchAllPhotos = () => (dispatch) => {
   return PhotoAPIUtil.fetchAllPhotos()
-  .then(
-    (photos) => (dispatch(receivePhotos(photos))),
-    (error) => (dispatch(receivePhotoErrors(error.responseJSON)))
-  );
+                     .then(
+                       (photos) => (dispatch(receivePhotos(photos))),
+                       (error) => (dispatch(receivePhotoErrors(error.responseJSON)))
+                     );
 }
 
 export const fetchAllUserPhotos = (id) => (dispatch) => {
   return PhotoAPIUtil.fetchAllUserPhotos(id)
-  .then(
-    (photos) => (dispatch(receiveUserPhotos(photos))),
-    (error) => (dispatch(receivePhotoErrors(error.responseJSON)))
-  );
+                     .then(
+                       (photos) => (dispatch(receiveUserPhotos(photos))),
+                       (error) => (dispatch(receivePhotoErrors(error.responseJSON)))
+                     );
 }
 
 export const fetchPhoto = (id) => (dispatch) => {
   return PhotoAPIUtil.fetchPhoto(id)
-  .then(
-    (photo) => (dispatch(receivePhoto(photo))),
-    (error) => (dispatch(receivePhotoErrors(error.responseJSON)))
-  );
+                     .then(
+                       (photo) => (dispatch(receivePhoto(photo))),
+                       (error) => (dispatch(receivePhotoErrors(error.responseJSON)))
+                      );
 }
 
 export const createPhoto = (photo) => (dispatch) => {
   return PhotoAPIUtil.createPhoto(photo)
-  .then(
-    (photo) => (dispatch(receivePhoto(photo))),
-    (error) => (dispatch(receivePhotoErrors(error.responseJSON)))
-  );
+                     .then(
+                       (photo) => (dispatch(receivePhoto(photo))),
+                       (error) => (dispatch(receivePhotoErrors(error.responseJSON)))
+                     );
 }
 
 export const updatePhoto = (photo) => (dispatch) => {
   return PhotoAPIUtil.updatePhoto(photo)
-  .then(
-    (photo) => (dispatch(receivePhoto(photo))),
-    (error) => (dispatch(receivePhotoErrors(error.responseJSON)))
-  );
+                     .then(
+                       (photo) => (dispatch(receivePhoto(photo))),
+                       (error) => (dispatch(receivePhotoErrors(error.responseJSON)))
+                     );
 }
 
 export const deletePhoto = (id) => (dispatch) => {
   return PhotoAPIUtil.deletePhoto(id)
-  .then(
-    (id) => (dispatch(removePhoto(id)))
-  );
+                     .then(
+                       (id) => (dispatch(removePhoto(id)))
+                     );
 }

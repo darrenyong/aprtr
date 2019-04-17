@@ -1,6 +1,6 @@
 import React from 'react';
 import { EditPhotoForm } from '../photo/edit_photo_form_container';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 class PhotoShow extends React.Component {
   constructor(props) {

@@ -1,9 +1,8 @@
-import React from "react";
 import { connect } from "react-redux";
 import PhotoIndex from "./photo_index";
-import { fetchAllPhotos } from "../../actions/photo"
+import { fetchAllPhotos } from "../../actions/photo_actions"
 
-const mSP = (state) => {
+const mSP = (state, ownProps) => {
   return ({
     containerType: "photoIndex",
     photos: Object.values(state.entities.photos)
