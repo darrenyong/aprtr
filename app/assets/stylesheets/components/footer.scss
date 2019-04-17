@@ -21,12 +21,30 @@
   letter-spacing: 0.5px;
 }
 
-.github-plug a, .linkedin-plug a, .contact-plug a, .github-plug a:visited, .github-plug a:focus, .github-plug a:active, .linkedin-plug a:visited, .linkedin-plug a:focus, .linkedin-plug a:active, .contact-plug a:visited, .contact-plug a:focus, .contact-plug a:active {
+.github-plug a,
+.linkedin-plug a, 
+.contact-plug a, 
+.portfolio-plug a,
+.github-plug a:visited, 
+.github-plug a:focus, 
+.github-plug a:active, 
+.linkedin-plug a:visited, 
+.linkedin-plug a:focus, 
+.linkedin-plug a:active, 
+.contact-plug a:visited, 
+.contact-plug a:focus, 
+.contact-plug a:active,
+.portfolio-plug a:visited,
+.portfolio-plug a:focus,
+.portfolio-plug a:active {
   color: #999;
   text-decoration: none;
 }
 
-.github-plug a:hover, .linkedin-plug a:hover, .contact-plug a:hover {
+.github-plug a:hover, 
+.linkedin-plug a:hover, 
+.contact-plug a:hover,
+.portfolio-plug a:hover {
   color: #c8c8c8;
   text-decoration: none;
 }
