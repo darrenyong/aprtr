@@ -15,7 +15,7 @@ Aprtr (Aperture) is an image hosting service inspired by Flickr. It is built usi
 * [Viewing & Editing photos](https://github.com/darrenyong/Aprtr#viewing--editing)
 * [Viewing user profiles](https://github.com/darrenyong/Aprtr#user-profile)
 * [User authentication](https://github.com/darrenyong/Aprtr#user-authentication)
-* [Viewing Albums]()
+* [Viewing Albums](https://github.com/darrenyong/aprtr#albums)
 
 ### Planned Features
 * Creating, editing and viewing albums
