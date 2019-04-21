@@ -15,6 +15,7 @@ Aprtr (Aperture) is an image hosting service inspired by Flickr. It is built usi
 * [Viewing & Editing photos](https://github.com/darrenyong/Aprtr#viewing--editing)
 * [Viewing user profiles](https://github.com/darrenyong/Aprtr#user-profile)
 * [User authentication](https://github.com/darrenyong/Aprtr#user-authentication)
+* [Viewing Albums]()
 
 ### Planned Features
 * Creating, editing and viewing albums
@@ -110,6 +111,12 @@ handleSubmit(e) {
   this.props.toggleEdit(e);
 }
 ```
+*** 
+<br>
+
+### Albums
+Users are able to view albums and the associated photos in that album. Eventually,
+users will be able to create albums and add photos to any albums.
 *** 
 <br>
 
