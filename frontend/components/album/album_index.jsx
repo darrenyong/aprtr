@@ -21,7 +21,7 @@ class AlbumIndex extends React.Component {
   }
 
   render() {
-    let display, albums, username;
+    let display, albums, username, title;
 
     if (this.props.user) {
       username = this.props.user.username
@@ -34,11 +34,16 @@ class AlbumIndex extends React.Component {
     })
 
     document.title = `${username} | Aprtr`
+    if (this.props.albumCount == 1) {
+      title = "Allbum"
+    } else {
+      title = "Albums"
+    }
     display = (
       <div className="photoIndex-parent">
         <div className="userIndex-header">
           <h1>{username}</h1>
-          <h3>{this.props.albumCount} Albums</h3>
+          <h3>{this.props.albumCount} {title}</h3>
         </div>
         <div className="userIndex-bar">
           <Link className="userIndex-photos" to={`/users/${this.props.match.params.id}/photos`}>Photos</Link>
