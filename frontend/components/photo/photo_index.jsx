@@ -29,7 +29,7 @@ class PhotoIndex extends React.Component {
   }
 
   render() {
-    let display, username;
+    let display, username, title;
 
     if (this.props.user) {
       username = this.props.user.username
@@ -53,6 +53,11 @@ class PhotoIndex extends React.Component {
       )
     } else {
       document.title = `${username} | Aprtr`
+      if (this.props.photoCount == 1) {
+        title = "Photo"
+      } else {
+        title = "Photos"
+      }
       display = (
         <div className="photoIndex-parent">
           <div className="userIndex-header">
